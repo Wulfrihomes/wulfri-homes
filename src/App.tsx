@@ -5,11 +5,16 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ScrollToTop } from "./components/ScrollToTop";
 import Index from "./pages/Index";
-import Products from "./pages/Products";
-import ProductDetail from "./pages/ProductDetail";
 import About from "./pages/About";
-import Cart from "./pages/Cart";
-import Checkout from "./pages/Checkout";
+import Projects from "./pages/Projects";
+import ProjectDetail from "./pages/ProjectDetail";
+import LandEstates from "./pages/LandEstates";
+import HousingProjects from "./pages/HousingProjects";
+import CommercialProperties from "./pages/CommercialProperties";
+import InvestmentOpportunities from "./pages/InvestmentOpportunities";
+import Blog from "./pages/Blog";
+import FAQs from "./pages/FAQs";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,12 +28,16 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/product/:slug" element={<ProductDetail />} />
           <Route path="/about" element={<About />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/checkout" element={<Checkout />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/project/:slug" element={<ProjectDetail />} />
+          <Route path="/land-estates" element={<LandEstates />} />
+          <Route path="/housing" element={<HousingProjects />} />
+          <Route path="/commercial" element={<CommercialProperties />} />
+          <Route path="/investment" element={<InvestmentOpportunities />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/faqs" element={<FAQs />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
