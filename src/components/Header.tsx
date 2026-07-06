@@ -1,237 +1,177 @@
-import { Link } from "react-router-dom";
-import { Heart, Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useWishlist } from "@/hooks/useWishlist";
-import { CartIcon } from "@/components/CartIcon";
-import { collections } from "@/data/products";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
+
+const navLinks = [
+  { to: "/", label: "Home" },
+  { to: "/about", label: "About" },
+  {
+    label: "Projects",
+    children: [
+      { to: "/projects", label: "All Projects" },
+      { to: "/land-estates", label: "Land Estates" },
+      { to: "/housing", label: "Housing Projects" },
+      { to: "/commercial", label: "Commercial Properties" },
+    ],
+  },
+  { to: "/investment", label: "Investment" },
+  { to: "/blog", label: "Blog" },
+  { to: "/faqs", label: "FAQs" },
+  { to: "/contact", label: "Contact" },
+];
 
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { items } = useWishlist();
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    setMobileMenuOpen(false);
+    setOpenDropdown(null);
+  }, [location.pathname]);
+
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 transition-all duration-500",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         scrolled
-          ? "bg-background/95 backdrop-blur-md border-b border-border shadow-sm"
-          : "bg-background/80 backdrop-blur-sm border-b border-transparent"
+          ? "bg-ivory/95 backdrop-blur-md border-b border-border shadow-sm"
+          : "bg-transparent border-b border-transparent"
       )}
     >
       <nav className="container-full">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link
-            to="/"
-            className="font-serif text-2xl md:text-3xl tracking-tight text-foreground hover:text-primary transition-colors duration-300"
-          >
-            Maison
+          <Link to="/" className="flex items-center gap-2 group">
+            <div className="w-9 h-9 border-2 border-primary flex items-center justify-center">
+              <span className="font-serif text-lg text-primary">W</span>
+            </div>
+            <div className="leading-none">
+              <div className={cn("font-serif text-xl tracking-tight transition-colors", scrolled ? "text-charcoal" : "text-charcoal")}>
+                Wulfri Homes
+              </div>
+              <div className="text-[9px] tracking-[0.3em] uppercase text-stone mt-1">Est. 2016</div>
+            </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            <NavigationMenu>
-              <NavigationMenuList>
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent text-xs font-medium tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground">
-                    Collections
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-1 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                      {collections.map((collection) => (
-                        <li key={collection.id}>
-                          <NavigationMenuLink asChild>
-                            <Link
-                              to={`/products?collection=${collection.slug}`}
-                              className={cn(
-                                "block select-none space-y-1 rounded-sm p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                              )}
-                            >
-                              <div className="text-sm font-medium leading-none">
-                                {collection.name}
-                              </div>
-                              <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                                {collection.description}
-                              </p>
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                      ))}
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
-
-            <Link
-              to="/products"
-              className="text-xs font-medium tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-300 link-underline"
-            >
-              Shop All
-            </Link>
-
-            <Link
-              to="/about"
-              className="text-xs font-medium tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-300 link-underline"
-            >
-              About
-            </Link>
-          </div>
-
-          {/* Right side actions */}
-          <div className="flex items-center gap-2">
-            {/* Wishlist Icon with Tooltip */}
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <button className="relative p-2 hover:bg-accent transition-colors duration-300 group">
-                  <Heart className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
+          {/* Desktop Nav */}
+          <div className="hidden lg:flex items-center gap-8">
+            {navLinks.map((link) =>
+              link.children ? (
+                <div
+                  key={link.label}
+                  className="relative"
+                  onMouseEnter={() => setOpenDropdown(link.label)}
+                  onMouseLeave={() => setOpenDropdown(null)}
+                >
+                  <button className="flex items-center gap-1 text-xs font-medium tracking-[0.15em] uppercase text-charcoal/70 hover:text-charcoal transition-colors">
+                    {link.label}
+                    <ChevronDown className="w-3 h-3" />
+                  </button>
                   <AnimatePresence>
-                    {items.length > 0 && (
-                      <motion.span
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        exit={{ scale: 0 }}
-                        className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-primary text-primary-foreground text-[10px] font-semibold rounded-full flex items-center justify-center"
+                    {openDropdown === link.label && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute top-full left-0 pt-4"
                       >
-                        {items.length > 9 ? "9+" : items.length}
-                      </motion.span>
+                        <div className="bg-ivory border border-border shadow-xl py-2 min-w-[240px]">
+                          {link.children.map((child) => (
+                            <Link
+                              key={child.to}
+                              to={child.to}
+                              className="block px-6 py-3 text-xs tracking-[0.1em] uppercase text-charcoal/70 hover:text-primary hover:bg-linen transition-colors"
+                            >
+                              {child.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </motion.div>
                     )}
                   </AnimatePresence>
-                </button>
-              </TooltipTrigger>
-              <TooltipContent side="bottom" className="max-w-xs">
-                {items.length === 0 ? (
-                  <p className="text-sm">Your wishlist is empty</p>
-                ) : (
-                  <div className="space-y-2">
-                    <p className="text-sm font-medium">{items.length} saved {items.length === 1 ? 'item' : 'items'}</p>
-                    <div className="space-y-1">
-                      {items.slice(0, 3).map((item) => (
-                        <p key={item.id} className="text-xs text-muted-foreground truncate">
-                          {item.name}
-                        </p>
-                      ))}
-                      {items.length > 3 && (
-                        <p className="text-xs text-muted-foreground">+{items.length - 3} more</p>
-                      )}
-                    </div>
-                  </div>
-                )}
-              </TooltipContent>
-            </Tooltip>
-
-            {/* Cart Icon */}
-            <CartIcon />
-
-            {/* Mobile menu button */}
-            <button
-              className="md:hidden p-2 hover:bg-accent transition-colors duration-300"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              <AnimatePresence mode="wait">
-                {mobileMenuOpen ? (
-                  <motion.div
-                    key="close"
-                    initial={{ rotate: -90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: 90, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <X className="w-5 h-5" />
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="menu"
-                    initial={{ rotate: 90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: -90, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <Menu className="w-5 h-5" />
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </button>
+                </div>
+              ) : (
+                <Link
+                  key={link.to}
+                  to={link.to!}
+                  className={cn(
+                    "text-xs font-medium tracking-[0.15em] uppercase transition-colors link-underline",
+                    location.pathname === link.to ? "text-primary" : "text-charcoal/70 hover:text-charcoal"
+                  )}
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
           </div>
+
+          {/* CTA */}
+          <div className="hidden lg:block">
+            <Link to="/contact" className="btn-gold">
+              Book Inspection
+            </Link>
+          </div>
+
+          {/* Mobile menu */}
+          <button
+            className="lg:hidden p-2 text-charcoal"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Menu"
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
 
-        {/* Mobile Menu */}
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] as const }}
-              className="md:hidden border-t border-border overflow-hidden"
+              className="lg:hidden border-t border-border overflow-hidden bg-ivory"
             >
-              <div className="py-8 space-y-6">
-                <div className="space-y-1">
-                  <p className="text-[10px] font-semibold tracking-[0.3em] uppercase text-muted-foreground/50 px-2 mb-3">
-                    Collections
-                  </p>
-                  {collections.slice(0, 6).map((collection, i) => (
-                    <motion.div
-                      key={collection.id}
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: i * 0.05 }}
-                    >
-                      <Link
-                        to={`/products?collection=${collection.slug}`}
-                        className="block px-2 py-2.5 text-sm hover:bg-accent transition-colors duration-300"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {collection.name}
-                      </Link>
-                    </motion.div>
-                  ))}
-                </div>
-                <div className="pt-6 border-t border-border space-y-1">
-                  {[
-                    { to: "/products", label: "Shop All" },
-                    { to: "/about", label: "About" },
-                    { to: "/cart", label: "Shopping Bag" },
-                  ].map((link, i) => (
-                    <motion.div
-                      key={link.to}
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.3 + i * 0.05 }}
-                    >
-                      <Link
-                        to={link.to}
-                        className="block px-2 py-2.5 text-sm font-medium hover:bg-accent transition-colors duration-300"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
+              <div className="py-6 space-y-1">
+                {navLinks.map((link) =>
+                  link.children ? (
+                    <div key={link.label} className="border-b border-border/50">
+                      <p className="px-4 py-3 text-[10px] font-semibold tracking-[0.3em] uppercase text-primary">
                         {link.label}
-                      </Link>
-                    </motion.div>
-                  ))}
+                      </p>
+                      {link.children.map((child) => (
+                        <Link
+                          key={child.to}
+                          to={child.to}
+                          className="block px-6 py-3 text-sm text-charcoal/80 hover:bg-linen"
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  ) : (
+                    <Link
+                      key={link.to}
+                      to={link.to!}
+                      className="block px-4 py-3 text-sm font-medium text-charcoal hover:bg-linen"
+                    >
+                      {link.label}
+                    </Link>
+                  )
+                )}
+                <div className="pt-4 px-4">
+                  <Link to="/contact" className="btn-gold w-full">
+                    Book Inspection
+                  </Link>
                 </div>
               </div>
             </motion.div>
