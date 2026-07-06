@@ -1,186 +1,126 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
-import { collections } from "@/data/products";
+import { ArrowRight, Instagram, Facebook, Linkedin, Youtube } from "lucide-react";
+import { PHONE_NUMBER, EMAIL, OFFICE_ADDRESS } from "@/data/wulfri";
 
 export const Footer = () => {
   return (
-    <footer className="bg-foreground text-background">
-      {/* Top bar */}
-      <div className="border-b border-background/10">
-        <div className="container-full py-12 md:py-16">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
-            <div>
-              <Link
-                to="/"
-                className="font-serif text-3xl md:text-4xl tracking-tight text-background"
-              >
-                Maison
-              </Link>
-              <p className="mt-3 text-sm text-background/50 leading-relaxed max-w-xs">
-                Curated home objects and lifestyle pieces for considered living.
-              </p>
-            </div>
+    <footer className="bg-charcoal text-ivory">
+      <div className="container-full py-16 md:py-20">
+        <div className="grid gap-12 lg:grid-cols-12">
+          {/* Brand */}
+          <div className="lg:col-span-4">
+            <Link to="/" className="flex items-center gap-2 group">
+              <div className="w-10 h-10 border-2 border-primary flex items-center justify-center">
+                <span className="font-serif text-xl text-primary">W</span>
+              </div>
+              <div className="leading-none">
+                <div className="font-serif text-2xl text-ivory">Wulfri Homes</div>
+                <div className="text-[9px] tracking-[0.3em] uppercase text-ivory/50 mt-1">Est. 2016</div>
+              </div>
+            </Link>
+            <p className="mt-6 text-sm text-ivory/60 leading-relaxed max-w-sm">
+              Nigeria's trusted real estate development and marketing company. Building generational wealth through verified land and premium homes.
+            </p>
 
-            {/* Newsletter in footer */}
-            <div className="max-w-sm w-full">
-              <p className="text-[10px] font-semibold tracking-[0.3em] uppercase text-background/40 mb-3">
-                Stay Connected
-              </p>
-              <form className="flex gap-0">
+            <div className="mt-8">
+              <p className="text-[10px] font-semibold tracking-[0.3em] uppercase text-primary mb-3">Newsletter</p>
+              <form className="flex" onSubmit={(e) => e.preventDefault()}>
                 <input
                   type="email"
-                  placeholder="Your email"
-                  className="flex-1 h-12 px-4 text-sm bg-background/5 border border-background/15 text-background placeholder:text-background/30 focus:outline-none focus:border-background/40 transition-colors"
+                  placeholder="Your email address"
+                  className="flex-1 h-11 px-4 text-sm bg-ivory/5 border border-ivory/15 text-ivory placeholder:text-ivory/30 focus:outline-none focus:border-primary transition-colors"
                 />
-                <button
-                  type="submit"
-                  className="h-12 px-5 text-sm font-medium bg-background text-foreground hover:bg-background/90 transition-colors"
-                >
+                <button className="h-11 px-4 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors">
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </form>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Main footer content */}
-      <div className="container-full py-12 md:py-16">
-        <div className="grid gap-10 md:grid-cols-4">
-          {/* Collections */}
-          <div>
-            <h4 className="text-[11px] font-semibold tracking-[0.25em] uppercase text-background/40 mb-5">
-              Collections
-            </h4>
+          {/* Explore */}
+          <div className="lg:col-span-2">
+            <h4 className="text-[11px] font-semibold tracking-[0.25em] uppercase text-primary mb-5">Explore</h4>
             <ul className="space-y-3">
-              {collections.slice(0, 6).map((collection) => (
-                <li key={collection.id}>
-                  <Link
-                    to={`/products?collection=${collection.slug}`}
-                    className="text-sm text-background/60 hover:text-background transition-colors duration-300"
-                  >
-                    {collection.name}
+              {[
+                { to: "/", label: "Home" },
+                { to: "/about", label: "About Us" },
+                { to: "/projects", label: "Projects" },
+                { to: "/investment", label: "Investment" },
+                { to: "/blog", label: "Blog" },
+                { to: "/faqs", label: "FAQs" },
+              ].map((l) => (
+                <li key={l.to}>
+                  <Link to={l.to} className="text-sm text-ivory/60 hover:text-primary transition-colors">
+                    {l.label}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Explore */}
-          <div>
-            <h4 className="text-[11px] font-semibold tracking-[0.25em] uppercase text-background/40 mb-5">
-              Explore
-            </h4>
+          {/* Property Types */}
+          <div className="lg:col-span-2">
+            <h4 className="text-[11px] font-semibold tracking-[0.25em] uppercase text-primary mb-5">Properties</h4>
             <ul className="space-y-3">
-              <li>
-                <Link
-                  to="/products"
-                  className="text-sm text-background/60 hover:text-background transition-colors duration-300"
-                >
-                  Shop All
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/about"
-                  className="text-sm text-background/60 hover:text-background transition-colors duration-300"
-                >
-                  Our Story
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/cart"
-                  className="text-sm text-background/60 hover:text-background transition-colors duration-300"
-                >
-                  Shopping Bag
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Support */}
-          <div>
-            <h4 className="text-[11px] font-semibold tracking-[0.25em] uppercase text-background/40 mb-5">
-              Support
-            </h4>
-            <ul className="space-y-3">
-              <li>
-                <a
-                  href="#"
-                  className="text-sm text-background/60 hover:text-background transition-colors duration-300"
-                >
-                  Shipping & Returns
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-sm text-background/60 hover:text-background transition-colors duration-300"
-                >
-                  Care Guide
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-sm text-background/60 hover:text-background transition-colors duration-300"
-                >
-                  FAQ
-                </a>
-              </li>
+              {[
+                { to: "/land-estates", label: "Land Estates" },
+                { to: "/housing", label: "Housing" },
+                { to: "/commercial", label: "Commercial" },
+                { to: "/projects?filter=upcoming", label: "Upcoming" },
+                { to: "/projects?filter=available", label: "Available" },
+              ].map((l) => (
+                <li key={l.to}>
+                  <Link to={l.to} className="text-sm text-ivory/60 hover:text-primary transition-colors">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Contact */}
-          <div>
-            <h4 className="text-[11px] font-semibold tracking-[0.25em] uppercase text-background/40 mb-5">
-              Contact
-            </h4>
-            <ul className="space-y-3">
+          <div className="lg:col-span-4">
+            <h4 className="text-[11px] font-semibold tracking-[0.25em] uppercase text-primary mb-5">Contact</h4>
+            <ul className="space-y-3 text-sm text-ivory/60">
+              <li>{OFFICE_ADDRESS}</li>
               <li>
-                <a
-                  href="mailto:hello@maison.com"
-                  className="text-sm text-background/60 hover:text-background transition-colors duration-300"
-                >
-                  hello@maison.com
+                <a href={`tel:${PHONE_NUMBER}`} className="hover:text-primary transition-colors">
+                  {PHONE_NUMBER}
                 </a>
               </li>
               <li>
-                <p className="text-sm text-background/40 leading-relaxed">
-                  Mon–Fri, 9am–6pm CET
-                </p>
+                <a href={`mailto:${EMAIL}`} className="hover:text-primary transition-colors">
+                  {EMAIL}
+                </a>
               </li>
+              <li className="text-ivory/40">Mon–Sat, 9am–6pm WAT</li>
             </ul>
+
+            <div className="mt-6 flex gap-4">
+              {[Instagram, Facebook, Linkedin, Youtube].map((Icon, i) => (
+                <a
+                  key={i}
+                  href="#"
+                  className="w-10 h-10 border border-ivory/15 flex items-center justify-center hover:border-primary hover:text-primary transition-all"
+                  aria-label="Social"
+                >
+                  <Icon className="w-4 h-4" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom bar */}
-      <div className="border-t border-background/10">
+      <div className="border-t border-ivory/10">
         <div className="container-full py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-background/30">
-            © {new Date().getFullYear()} Maison. All rights reserved.
+          <p className="text-xs text-ivory/40">
+            © {new Date().getFullYear()} Wulfri Homes Limited. All rights reserved. RC 1450832.
           </p>
           <div className="flex gap-8">
-            <a
-              href="#"
-              className="text-xs text-background/30 hover:text-background/60 transition-colors duration-300"
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="#"
-              className="text-xs text-background/30 hover:text-background/60 transition-colors duration-300"
-            >
-              Terms of Service
-            </a>
-            <a
-              href="#"
-              className="text-xs text-background/30 hover:text-background/60 transition-colors duration-300"
-            >
-              Cookie Policy
-            </a>
+            <a href="#" className="text-xs text-ivory/40 hover:text-primary transition-colors">Privacy Policy</a>
+            <a href="#" className="text-xs text-ivory/40 hover:text-primary transition-colors">Terms of Service</a>
+            <a href="#" className="text-xs text-ivory/40 hover:text-primary transition-colors">Cookies</a>
           </div>
         </div>
       </div>
