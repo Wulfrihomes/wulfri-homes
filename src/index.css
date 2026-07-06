@@ -160,7 +160,7 @@
     @apply overflow-hidden;
   }
   .image-zoom img {
-    @apply transition-transform duration-[1.4s] ease-out;
+    transition: transform 1.4s ease-out;
   }
   .image-zoom:hover img {
     @apply scale-110;
