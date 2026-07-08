@@ -45,32 +45,34 @@ export default function EmiratesLanding() {
           <div className="absolute inset-0 bg-gradient-to-r from-charcoal/95 via-charcoal/80 to-charcoal/40" />
         </div>
         <div className="relative container-full grid lg:grid-cols-2 gap-12 items-center">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 border border-primary/40 bg-primary/10 text-primary text-[10px] tracking-[0.3em] uppercase mb-6">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-white">
+            <div className="inline-flex items-center gap-2 px-4 py-2 border border-primary bg-primary/20 text-white text-[10px] tracking-[0.3em] uppercase mb-8">
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse" /> Selling Fast • Limited Units
             </div>
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-ivory leading-tight mb-6">
-              Emirates Parks<br />& Gardens
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.05] mb-6">
+              Emirates Parks<br />
+              <span className="text-primary">& Gardens</span>
             </h1>
-            <p className="text-lg text-ivory/80 mb-8 max-w-lg">
-              A master-planned residential estate on the Lagos-Ibadan corridor. Verified C of O title, world-class infrastructure, and payment plans engineered for wealth creation.
+            <p className="text-lg text-white/85 mb-10 max-w-lg leading-relaxed">
+              A master-planned residential estate on the Lagos–Ibadan corridor. Verified C of O title, world-class infrastructure, and payment plans engineered for wealth creation.
             </p>
-            <div className="flex flex-wrap gap-6 mb-8">
+            <div className="grid grid-cols-3 gap-6 mb-10 pb-10 border-b border-white/15 max-w-lg">
               <div>
-                <div className="text-[10px] tracking-[0.3em] uppercase text-primary mb-1">From</div>
-                <div className="font-serif text-3xl text-ivory">₦8.25M</div>
+                <div className="text-[10px] tracking-[0.25em] uppercase text-primary mb-2">From</div>
+                <div className="font-serif text-2xl text-white">₦8.25M</div>
               </div>
               <div>
-                <div className="text-[10px] tracking-[0.3em] uppercase text-primary mb-1">Location</div>
-                <div className="font-serif text-lg text-ivory">Mowe-Ofada, Ogun</div>
+                <div className="text-[10px] tracking-[0.25em] uppercase text-primary mb-2">Location</div>
+                <div className="font-serif text-base text-white leading-tight">Mowe-Ofada<br />Ogun</div>
               </div>
               <div>
-                <div className="text-[10px] tracking-[0.3em] uppercase text-primary mb-1">Title</div>
-                <div className="font-serif text-lg text-ivory">C of O</div>
+                <div className="text-[10px] tracking-[0.25em] uppercase text-primary mb-2">Title</div>
+                <div className="font-serif text-2xl text-white">C of O</div>
               </div>
             </div>
             <a href="#reserve" className="btn-gold inline-block">Reserve Your Plot</a>
           </motion.div>
+
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
