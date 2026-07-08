@@ -10,62 +10,62 @@
 
 @layer base {
   :root {
-    /* Ivory neutrals */
-    --background: 40 30% 97%;
-    --foreground: 30 12% 12%;
+    /* White base */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 8%;
 
     --card: 0 0% 100%;
-    --card-foreground: 30 12% 12%;
+    --card-foreground: 0 0% 8%;
 
-    --popover: 40 30% 97%;
-    --popover-foreground: 30 12% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
 
-    /* Brushed gold primary */
-    --primary: 38 45% 48%;
-    --primary-foreground: 40 30% 97%;
+    /* Dark orange primary */
+    --primary: 20 90% 42%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Deep charcoal secondary */
-    --secondary: 30 8% 18%;
-    --secondary-foreground: 40 30% 97%;
+    /* Black secondary */
+    --secondary: 0 0% 8%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 35 15% 92%;
-    --muted-foreground: 30 8% 40%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 35%;
 
-    --accent: 40 25% 90%;
-    --accent-foreground: 30 12% 12%;
+    --accent: 20 90% 96%;
+    --accent-foreground: 0 0% 8%;
 
     --destructive: 0 65% 45%;
-    --destructive-foreground: 40 30% 97%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 30 12% 88%;
-    --input: 30 12% 88%;
-    --ring: 38 45% 48%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 20 90% 42%;
 
     --radius: 0.25rem;
 
     /* Brand tokens */
-    --gold: 38 45% 48%;
-    --gold-light: 40 55% 65%;
-    --gold-dark: 35 55% 35%;
-    --ivory: 40 30% 97%;
-    --charcoal: 30 12% 12%;
-    --charcoal-soft: 30 10% 22%;
-    --stone: 30 8% 55%;
-    --linen: 38 25% 94%;
-    --emerald: 155 60% 20%;
+    --gold: 20 90% 42%;
+    --gold-light: 22 90% 55%;
+    --gold-dark: 18 90% 32%;
+    --ivory: 0 0% 100%;
+    --charcoal: 0 0% 8%;
+    --charcoal-soft: 0 0% 15%;
+    --stone: 0 0% 40%;
+    --linen: 0 0% 97%;
+    --emerald: 20 90% 42%;
 
     /* Typography */
     --font-serif: 'Cormorant Garamond', Georgia, serif;
     --font-sans: 'Inter', system-ui, sans-serif;
 
-    --sidebar-background: 40 30% 97%;
-    --sidebar-foreground: 30 12% 20%;
-    --sidebar-primary: 38 45% 48%;
-    --sidebar-primary-foreground: 40 30% 97%;
-    --sidebar-accent: 40 25% 90%;
-    --sidebar-accent-foreground: 30 12% 12%;
-    --sidebar-border: 30 12% 88%;
-    --sidebar-ring: 38 45% 48%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 15%;
+    --sidebar-primary: 20 90% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 20 90% 96%;
+    --sidebar-accent-foreground: 0 0% 8%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 20 90% 42%;
   }
 
   .dark {
