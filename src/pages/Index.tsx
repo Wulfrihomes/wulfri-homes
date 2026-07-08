@@ -47,7 +47,7 @@ const Index = () => {
               Through Smart<br />
               <span className="italic text-primary">Real Estate</span> Investments
             </h1>
-            <p className="text-base md:text-lg text-ivory/80 mb-10 leading-relaxed max-w-xl">
+            <p className="text-base md:text-lg text-white mb-10 leading-relaxed max-w-xl">
               Helping individuals and families own premium lands and beautiful homes across Nigeria with flexible payment plans and verified titles.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -73,22 +73,7 @@ const Index = () => {
           </motion.div>
         </motion.div>
 
-        {/* Stats overlay */}
-        <div className="absolute bottom-0 left-0 right-0 border-t border-ivory/10 bg-charcoal/40 backdrop-blur-sm">
-          <div className="container-full py-6 grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { v: "2,500+", l: "Happy Families" },
-              { v: "12+", l: "Premium Estates" },
-              { v: "₦45B+", l: "Assets Managed" },
-              { v: "8 Yrs", l: "Track Record" },
-            ].map((s) => (
-              <div key={s.l} className="text-center md:text-left">
-                <div className="font-serif text-2xl md:text-3xl text-primary">{s.v}</div>
-                <div className="text-[10px] tracking-[0.25em] uppercase text-ivory/60 mt-1">{s.l}</div>
-              </div>
-            ))}
-          </div>
-        </div>
+        
       </section>
 
       {/* Why Choose Us */}
