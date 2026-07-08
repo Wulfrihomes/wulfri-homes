@@ -41,13 +41,9 @@ export const Header = () => {
 
   return (
     <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        scrolled
-          ? "bg-ivory/95 backdrop-blur-md border-b border-border shadow-sm"
-          : "bg-transparent border-b border-transparent"
-      )}
+      className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-border shadow-sm"
     >
+
       <nav className="container-full">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
