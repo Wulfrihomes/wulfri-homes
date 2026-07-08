@@ -242,7 +242,7 @@ export default function EmiratesLanding() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 bg-ivory">
+      <section id="reserve" className="py-24 bg-ivory scroll-mt-24">
         <div className="container-full max-w-3xl">
           <div className="text-center mb-10">
             <div className="text-[10px] tracking-[0.3em] uppercase text-primary mb-3">Secure Your Investment</div>
