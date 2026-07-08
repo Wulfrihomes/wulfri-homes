@@ -127,33 +127,91 @@ export default function EmiratesLanding() {
       </section>
 
       {/* Pricing */}
-      <section className="py-20 bg-charcoal text-ivory">
+      <section className="py-20 bg-linen text-charcoal">
         <div className="container-full">
           <div className="text-center mb-14">
-            <div className="text-[10px] tracking-[0.3em] uppercase text-primary mb-3">Payment Plans</div>
-            <h2 className="font-serif text-4xl">Transparent Pricing. Flexible Terms.</h2>
+            <div className="inline-block text-[10px] tracking-[0.3em] uppercase text-primary bg-primary/10 px-3 py-1 mb-4">Pricing</div>
+            <h2 className="font-serif text-4xl md:text-5xl text-charcoal mb-3">Transparent pricing. No hidden charges.</h2>
+            <p className="text-stone">Initial deposit of ₦1,000,000. Flexible plans available.</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {plans.map((p, i) => (
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {[
+              {
+                title: "Residential 300sqm",
+                popular: true,
+                rows: [
+                  ["Instant Payment", "₦8.25M"],
+                  ["0–3 Months", "₦8.85M"],
+                  ["6 Months", "₦9.5M"],
+                  ["12 Months", "₦10.5M"],
+                ],
+              },
+              {
+                title: "Residential 600sqm",
+                popular: false,
+                rows: [
+                  ["Instant Payment", "₦14.5M"],
+                  ["0–3 Months", "₦15.5M"],
+                  ["6 Months", "₦16.5M"],
+                  ["12 Months", "₦18M"],
+                ],
+              },
+              {
+                title: "Commercial Plot",
+                popular: false,
+                rows: [
+                  ["Instant Payment", "₦20M"],
+                  ["0–3 Months", "₦21M"],
+                  ["6 Months", "₦22M"],
+                  ["12 Months", "₦23M"],
+                ],
+              },
+            ].map((plan, i) => (
               <motion.div
-                key={i}
+                key={plan.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                className="border border-ivory/20 p-8 hover:border-primary transition-colors"
+                transition={{ delay: i * 0.08 }}
+                className={`relative bg-white p-8 flex flex-col ${
+                  plan.popular ? "border-2 border-primary" : "border border-border"
+                }`}
               >
-                <div className="text-[10px] tracking-[0.3em] uppercase text-primary mb-2">{p.tag}</div>
-                <div className="font-serif text-3xl mb-1">{p.price}</div>
-                <div className="text-sm text-ivory/60">{p.size}</div>
+                {plan.popular && (
+                  <div className="absolute -top-3 left-6 bg-primary text-primary-foreground text-[10px] font-semibold tracking-[0.2em] uppercase px-3 py-1">
+                    Most Popular
+                  </div>
+                )}
+                <h3 className="font-serif text-2xl text-charcoal mb-6">{plan.title}</h3>
+                <div className="flex-1 space-y-0 mb-6">
+                  {plan.rows.map(([label, price], idx) => (
+                    <div
+                      key={label}
+                      className={`flex items-center justify-between py-3 ${
+                        idx < plan.rows.length - 1 ? "border-b border-border" : ""
+                      }`}
+                    >
+                      <span className="text-sm text-stone">{label}</span>
+                      <span className="font-serif text-lg text-primary font-semibold">{price}</span>
+                    </div>
+                  ))}
+                </div>
+                <a
+                  href="#reserve"
+                  className="block text-center bg-charcoal text-ivory hover:bg-primary transition-colors py-3 text-xs tracking-[0.2em] uppercase font-medium"
+                >
+                  Reserve this plot
+                </a>
               </motion.div>
             ))}
           </div>
-          <div className="text-center mt-10">
-            <a href="#reserve" className="btn-gold inline-block">Request Full Pricing Pack</a>
+          <div className="text-center mt-10 text-[10px] tracking-[0.3em] uppercase text-stone">
+            All Prices Inclusive · No Hidden Charges
           </div>
         </div>
       </section>
+
+
 
       {/* Amenities */}
       <section className="py-20 bg-linen">
