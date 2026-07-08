@@ -13,7 +13,7 @@ const schema = z.object({
 });
 
 export default function Auth() {
-  const [mode, setMode] = useState<"signin" | "signup">("signin");
+  const [mode] = useState<"signin" | "signup">("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -105,12 +105,7 @@ export default function Auth() {
           </button>
         </form>
 
-        <button
-          onClick={() => setMode(mode === "signin" ? "signup" : "signin")}
-          className="w-full mt-6 text-xs tracking-[0.15em] uppercase text-stone hover:text-primary transition-colors"
-        >
-          {mode === "signin" ? "Need an account? Sign up" : "Already have an account? Sign in"}
-        </button>
+        {/* Signup disabled: admin accounts are managed manually. */}
       </motion.div>
     </div>
   );
