@@ -44,8 +44,8 @@ export default function EmiratesLanding() {
           <img src={gallery[0]} alt="Emirates Parks & Gardens" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-charcoal/95 via-charcoal/80 to-charcoal/40" />
         </div>
-        <div className="relative container-full grid lg:grid-cols-2 gap-12 items-center">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-white">
+        <div className="relative container-full">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-white max-w-3xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 border border-primary bg-primary/20 text-white text-[10px] tracking-[0.3em] uppercase mb-8">
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse" /> Selling Fast • Limited Units
             </div>
@@ -53,7 +53,7 @@ export default function EmiratesLanding() {
               Emirates Parks<br />
               <span className="text-primary">& Gardens</span>
             </h1>
-            <p className="text-lg text-white/85 mb-10 max-w-lg leading-relaxed">
+            <p className="text-lg text-white/85 mb-10 max-w-xl leading-relaxed">
               A master-planned residential estate on the Lagos–Ibadan corridor. Verified C of O title, world-class infrastructure, and payment plans engineered for wealth creation.
             </p>
             <div className="grid grid-cols-3 gap-6 mb-10 pb-10 border-b border-white/15 max-w-lg">
@@ -72,17 +72,8 @@ export default function EmiratesLanding() {
             </div>
             <a href="#reserve" className="btn-gold inline-block">Reserve Your Plot</a>
           </motion.div>
-
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            id="reserve"
-          >
-            <LeadForm source="Emirates Landing — Hero" />
-          </motion.div>
         </div>
+
       </section>
 
       {/* USPs */}
