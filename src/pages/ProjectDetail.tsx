@@ -198,31 +198,9 @@ const ProjectDetail = () => {
                 </div>
               </div>
             </div>
-            )}
 
-            <div>
-              <p className="eyebrow mb-4">Amenities & Infrastructure</p>
-              <div className="grid md:grid-cols-2 gap-3">
-                {project.amenities.map((a) => (
-                  <div key={a} className="flex items-center gap-3 p-4 bg-linen">
-                    <Check className="w-4 h-4 text-primary flex-shrink-0" />
-                    <span className="text-sm text-charcoal">{a}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <p className="eyebrow mb-4">Location</p>
-              <div className="aspect-video bg-linen border border-border flex items-center justify-center text-muted-foreground">
-                <div className="text-center">
-                  <MapPin className="w-8 h-8 text-primary mx-auto mb-2" />
-                  <p className="text-sm">{project.location}</p>
-                  <p className="text-xs mt-1">Google Map embed available on request</p>
-                </div>
-              </div>
-            </div>
           </div>
+
 
           {/* Sticky sidebar */}
           <aside className="lg:sticky lg:top-28 lg:self-start space-y-6">
