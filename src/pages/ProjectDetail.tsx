@@ -97,11 +97,6 @@ const ProjectDetail = () => {
               <p className="text-muted-foreground leading-relaxed text-lg">{project.description}</p>
             </div>
 
-            <div>
-              <p className="eyebrow mb-4">Overview</p>
-              <h2 className="font-serif text-3xl md:text-4xl text-charcoal leading-[1.15] mb-6">About this development</h2>
-              <p className="text-muted-foreground leading-relaxed text-lg">{project.description}</p>
-            </div>
 
             {project.slug === "emirates-parks-gardens" && (
               <>
