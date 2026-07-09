@@ -1,11 +1,29 @@
 import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Check, Download, MessageCircle, ArrowLeft, ChevronLeft, ChevronRight, Calendar } from "lucide-react";
+import { MapPin, Check, Download, MessageCircle, ArrowLeft, ChevronLeft, ChevronRight, Calendar, ShieldCheck, TrendingUp, Wallet, Building2, Sparkles, PlayCircle } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { getProjectBySlug, WHATSAPP_NUMBER } from "@/data/wulfri";
 import { ProjectCard } from "@/components/ProjectCard";
 import { projects } from "@/data/wulfri";
+
+const emiratesUsps = [
+  { icon: ShieldCheck, title: "Verified C of O Title", desc: "Genuine title with government-backed documentation" },
+  { icon: MapPin, title: "Prime Location", desc: "Ewu-Ode before Interchange, Mowe-Ofada, Ogun" },
+  { icon: TrendingUp, title: "40% ROI Projected", desc: "Fast-appreciating corridor with proven historical growth" },
+  { icon: Wallet, title: "Flexible Payment", desc: "Outright, 3, 6 and 12-month structured plans" },
+  { icon: Building2, title: "Full Infrastructure", desc: "Roads, drainage, security, street lighting delivered" },
+  { icon: Sparkles, title: "Ready for Allocation", desc: "Physical allocation within 30 days of full payment" },
+];
+
+const emiratesGallery = [
+  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=80",
+  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1400&q=80",
+  "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1400&q=80",
+  "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1400&q=80",
+  "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1400&q=80",
+  "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1400&q=80",
+];
 
 const ProjectDetail = () => {
   const { slug } = useParams<{ slug: string }>();
