@@ -97,6 +97,77 @@ const ProjectDetail = () => {
               <p className="text-muted-foreground leading-relaxed text-lg">{project.description}</p>
             </div>
 
+            <div>
+              <p className="eyebrow mb-4">Overview</p>
+              <h2 className="font-serif text-3xl md:text-4xl text-charcoal leading-[1.15] mb-6">About this development</h2>
+              <p className="text-muted-foreground leading-relaxed text-lg">{project.description}</p>
+            </div>
+
+            {project.slug === "emirates-parks-gardens" && (
+              <>
+                {/* Why Emirates Parks & Gardens */}
+                <div>
+                  <p className="eyebrow mb-4">Why Emirates Parks & Gardens</p>
+                  <h2 className="font-serif text-3xl md:text-4xl text-charcoal leading-[1.15] mb-8">Built for Legacy. Priced for Growth.</h2>
+                  <div className="grid sm:grid-cols-2 gap-5">
+                    {emiratesUsps.map((u, i) => (
+                      <motion.div
+                        key={u.title}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.05 }}
+                        className="bg-linen border border-border p-6 hover:border-primary transition-colors"
+                      >
+                        <u.icon className="w-7 h-7 text-primary mb-3" />
+                        <h3 className="font-serif text-lg text-charcoal mb-1">{u.title}</h3>
+                        <p className="text-sm text-stone">{u.desc}</p>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Video */}
+                <div>
+                  <p className="eyebrow mb-4">Estate Video</p>
+                  <h2 className="font-serif text-3xl md:text-4xl text-charcoal leading-[1.15] mb-8">Take a virtual tour.</h2>
+                  <div className="relative aspect-video bg-charcoal overflow-hidden group cursor-pointer">
+                    <img
+                      src={emiratesGallery[0]}
+                      alt="Emirates Parks & Gardens video preview"
+                      className="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <PlayCircle className="w-20 h-20 text-primary drop-shadow-lg group-hover:scale-110 transition-transform" strokeWidth={1.2} />
+                    </div>
+                    <div className="absolute bottom-4 left-4 text-ivory text-xs tracking-[0.2em] uppercase bg-charcoal/60 px-3 py-1">
+                      Coming soon
+                    </div>
+                  </div>
+                </div>
+
+                {/* Estate Preview */}
+                <div>
+                  <p className="eyebrow mb-4">Estate Preview</p>
+                  <h2 className="font-serif text-3xl md:text-4xl text-charcoal leading-[1.15] mb-8">Life at Emirates Parks.</h2>
+                  <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
+                    {emiratesGallery.map((src, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.05 }}
+                        className={`overflow-hidden ${i === 0 ? "lg:col-span-2 lg:row-span-2 aspect-square lg:aspect-auto" : "aspect-square"}`}
+                      >
+                        <img src={src} alt={`Estate view ${i + 1}`} loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              </>
+            )}
+
             {project.plotSizes && (
               <div>
                 <p className="eyebrow mb-4">Plot Sizes Available</p>
@@ -108,6 +179,30 @@ const ProjectDetail = () => {
                   ))}
                 </div>
               </div>
+            )}
+
+            <div>
+              <p className="eyebrow mb-4">Amenities & Infrastructure</p>
+              <div className="grid md:grid-cols-2 gap-3">
+                {project.amenities.map((a) => (
+                  <div key={a} className="flex items-center gap-3 p-4 bg-linen">
+                    <Check className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span className="text-sm text-charcoal">{a}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <p className="eyebrow mb-4">Location</p>
+              <div className="aspect-video bg-linen border border-border flex items-center justify-center text-muted-foreground">
+                <div className="text-center">
+                  <MapPin className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <p className="text-sm">{project.location}</p>
+                  <p className="text-xs mt-1">Google Map embed available on request</p>
+                </div>
+              </div>
+            </div>
             )}
 
             <div>
