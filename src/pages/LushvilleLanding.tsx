@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, MapPin, TrendingUp, Wallet, Building2, CheckCircle2, Sparkles } from "lucide-react";
+import { ShieldCheck, MapPin, TrendingUp, Wallet, Building2, CheckCircle2, Sparkles, ChevronDown } from "lucide-react";
 import { LeadForm } from "@/components/LeadForm";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FloatingContact } from "@/components/FloatingContact";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const gallery = [
@@ -32,42 +34,42 @@ const plans = [
 ];
 
 export default function LushvilleLanding() {
+  const hero = gallery[0];
+
   return (
     <div className="min-h-screen bg-ivory">
       <Header />
 
-      <section className="relative min-h-screen flex items-center pt-24 pb-16">
-        <div className="absolute inset-0">
-          <img src={gallery[0]} alt="Lushville Estate" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-charcoal/95 via-charcoal/80 to-charcoal/40" />
-        </div>
-        <div className="relative container-full">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-white max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 border border-primary bg-primary/20 text-white text-[10px] tracking-[0.3em] uppercase mb-8">
-              <span className="w-2 h-2 bg-primary rounded-full animate-pulse" /> Selling Fast • Limited Plots
-            </div>
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.05] mb-6">
-              Lushville<br />
-              <span className="text-primary">Estate</span>
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+        <img
+          src={hero}
+          alt="Lushville Estate entrance"
+          width={1920}
+          height={1280}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80" />
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto text-white">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+            <Badge className="bg-[#D97706] border border-[#D97706] text-white backdrop-blur px-4 py-2 rounded-full text-xs tracking-widest uppercase mb-8 font-semibold">
+              By Lexshield Properties Limited
+            </Badge>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.05] mb-6 text-white">
+              Own Land at <span className="text-[#D97706] font-serif italic">Lushville Estate</span>
             </h1>
-            <p className="text-lg text-white/85 mb-10 max-w-xl leading-relaxed">
-              A master-planned residential estate in Lamini-Apete, Ibadan. Choose from 300sqm, 500sqm and commercial plots with flexible payment plans of up to 18 months.
+            <p className="text-base md:text-lg text-white max-w-2xl mx-auto mb-8 leading-relaxed">
+              Premium residential estate in Lamini-Apete, Ibadan with secure access, flexible payment plans and quality infrastructure.
             </p>
-            <div className="grid grid-cols-3 gap-6 mb-10 pb-10 border-b border-white/15 max-w-lg">
-              <div>
-                <div className="text-[10px] tracking-[0.25em] uppercase text-primary mb-2">From</div>
-                <div className="font-serif text-2xl text-white">₦5.1M</div>
-              </div>
-              <div>
-                <div className="text-[10px] tracking-[0.25em] uppercase text-primary mb-2">Location</div>
-                <div className="font-serif text-base text-white leading-tight">Lamini-Apete<br />Ibadan</div>
-              </div>
-              <div>
-                <div className="text-[10px] tracking-[0.25em] uppercase text-primary mb-2">Plots</div>
-                <div className="font-serif text-2xl text-white">300/500</div>
-              </div>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+              <a href="#lead-form">
+                <Button size="lg" className="bg-[#D97706] hover:bg-[#B45309] text-white rounded-full px-8 h-12 shadow-xl font-semibold tracking-wide">
+                  Book Free Inspection
+                </Button>
+              </a>
             </div>
-            <a href="#reserve" className="btn-gold inline-block">Reserve Your Plot</a>
+          </motion.div>
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }} className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/60">
+            <ChevronDown className="h-6 w-6 animate-bounce" />
           </motion.div>
         </div>
       </section>
@@ -191,7 +193,7 @@ export default function LushvilleLanding() {
         </div>
       </section>
 
-      <section id="reserve" className="py-24 bg-ivory scroll-mt-24">
+      <section id="lead-form" className="py-24 bg-ivory scroll-mt-24">
         <div className="container-full max-w-3xl">
           <div className="text-center mb-10">
             <div className="text-[10px] tracking-[0.3em] uppercase text-primary mb-3">Secure Your Investment</div>

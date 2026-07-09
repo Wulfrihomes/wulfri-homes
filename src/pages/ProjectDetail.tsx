@@ -17,12 +17,12 @@ const emiratesUsps = [
 ];
 
 const emiratesGallery = [
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=80",
-  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1400&q=80",
-  "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1400&q=80",
-  "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1400&q=80",
-  "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1400&q=80",
-  "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1400&q=80",
+  "https://res.cloudinary.com/vxtwsudt/image/upload/v1783609182/5fc1b1d0-fd97-4ee0-945e-af4caba951d2_an2bmz.jpg",
+  "https://res.cloudinary.com/vxtwsudt/image/upload/v1783609181/1000008727_cdfbxg.jpg",
+  "https://res.cloudinary.com/vxtwsudt/image/upload/v1783609184/419A2164-1-scaled_c8ipws.jpg",
+  "https://res.cloudinary.com/vxtwsudt/image/upload/v1783609184/0N2A2342-scaled_rqcmck.jpg",
+  "https://res.cloudinary.com/vxtwsudt/image/upload/v1783609184/419A2313-1-scaled_myp8hi.jpg",
+  "https://res.cloudinary.com/vxtwsudt/image/upload/v1783609182/1000008728_gilcja.jpg",
 ];
 
 const lushvilleGallery = [
@@ -75,22 +75,22 @@ const ProjectDetail = () => {
         <img src={heroImage} alt={project.name} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/40 to-charcoal/60" />
         <div className="relative container-full h-full flex flex-col justify-end pb-20">
-          <Link to="/projects" className="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-ivory/70 hover:text-primary mb-8 w-fit">
+          <Link to="/projects" className="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-white hover:text-[#D97706] mb-8 w-fit transition-colors">
             <ArrowLeft className="w-4 h-4" /> Back to Projects
           </Link>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
             <div className="flex flex-wrap gap-2 mb-4">
-              <span className="px-3 py-1 text-[10px] tracking-[0.2em] uppercase bg-primary text-ivory">{project.status}</span>
-              <span className="px-3 py-1 text-[10px] tracking-[0.2em] uppercase border border-ivory/30 text-ivory">{project.type}</span>
+              <span className="px-3 py-1 text-[10px] tracking-[0.2em] uppercase bg-[#D97706] text-white font-semibold">{project.status}</span>
+              <span className="px-3 py-1 text-[10px] tracking-[0.2em] uppercase border border-white/40 text-white">{project.type}</span>
             </div>
-            <h1 className="font-serif text-5xl md:text-7xl text-ivory leading-[0.95] mb-6">{project.name}</h1>
-            <div className="flex items-center gap-2 text-ivory/70 mb-6">
-              <MapPin className="w-4 h-4 text-primary" />
+            <h1 className="font-serif text-5xl md:text-7xl text-white leading-[0.95] mb-6">{project.name}</h1>
+            <div className="flex items-center gap-2 text-white mb-6">
+              <MapPin className="w-4 h-4 text-[#D97706]" />
               <span>{project.location}, {project.state} State</span>
             </div>
-            <p className="text-lg text-ivory/80 max-w-2xl">{project.tagline}</p>
+            <p className="text-lg text-white max-w-2xl leading-relaxed">{project.tagline}</p>
             {specialLandingRoute && (
-              <Link to={specialLandingRoute} className="inline-flex items-center mt-6 text-sm font-medium text-primary hover:text-primary/80">
+              <Link to={specialLandingRoute} className="inline-flex items-center mt-6 text-sm font-medium text-[#D97706] hover:text-[#B45309]">
                 Explore the dedicated project experience →
               </Link>
             )}

@@ -35,7 +35,7 @@ export const projects: Project[] = [
     tagline: "Premium residential estate with high ROI",
     description:
       "A meticulously master-planned residential estate strategically located along the Lagos-Ibadan corridor. Emirates Parks & Gardens offers verified C of O titles, world-class infrastructure and flexible payment plans engineered for long-term wealth creation.",
-    heroImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80",
+    heroImage: "https://res.cloudinary.com/vxtwsudt/image/upload/v1783607231/Emirates_Entrance_r8me9l.jpg",
     gallery: [
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
