@@ -13,43 +13,44 @@ const schema = z.object({
 });
 
 export default function Auth() {
-  const [mode] = useState<"signin" | "signup">("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+
   const navigate = useNavigate();
   const { session } = useAuth();
 
   useEffect(() => {
-    if (session) navigate("/admin", { replace: true });
+    if (session) {
+      navigate("/admin", { replace: true });
+    }
   }, [session, navigate]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const parsed = schema.safeParse({ email, password });
+
+    const parsed = schema.safeParse({
+      email,
+      password,
+    });
+
     if (!parsed.success) {
       toast.error(parsed.error.errors[0].message);
       return;
     }
+
     setLoading(true);
+
     try {
-      if (mode === "signup") {
-        const { error } = await supabase.auth.signUp({
-          email: parsed.data.email,
-          password: parsed.data.password,
-          options: { emailRedirectTo: `${window.location.origin}/admin` },
-        });
-        if (error) throw error;
-        toast.success("Account created. You may need to verify your email.");
-      } else {
-        const { error } = await supabase.auth.signInWithPassword({
-          email: parsed.data.email,
-          password: parsed.data.password,
-        });
-        if (error) throw error;
-        toast.success("Welcome back");
-        navigate("/admin", { replace: true });
-      }
+      const { error } = await supabase.auth.signInWithPassword({
+        email: parsed.data.email,
+        password: parsed.data.password,
+      });
+
+      if (error) throw error;
+
+      toast.success("Welcome back");
+      navigate("/admin", { replace: true });
     } catch (err: any) {
       toast.error(err.message || "Authentication failed");
     } finally {
@@ -65,20 +66,29 @@ export default function Auth() {
         className="w-full max-w-md bg-ivory border border-border shadow-xl p-10"
       >
         <Link to="/" className="block text-center mb-8">
-          <div className="font-serif text-2xl text-charcoal">Wulfri Homes</div>
-          <div className="text-[10px] tracking-[0.3em] uppercase text-stone mt-1">Admin Portal</div>
+          <div className="font-serif text-2xl text-charcoal">
+            Wulfri Homes
+          </div>
+
+          <div className="text-[10px] tracking-[0.3em] uppercase text-stone mt-1">
+            Admin Portal
+          </div>
         </Link>
 
         <h1 className="font-serif text-2xl text-charcoal text-center mb-2">
-          {mode === "signin" ? "Sign In" : "Create Account"}
+          Sign In
         </h1>
+
         <p className="text-sm text-stone text-center mb-8">
-          {mode === "signin" ? "Access the leads dashboard" : "First account becomes admin"}
+          Access the leads dashboard
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-xs tracking-[0.15em] uppercase text-charcoal/70 mb-2">Email</label>
+            <label className="block text-xs tracking-[0.15em] uppercase text-charcoal/70 mb-2">
+              Email
+            </label>
+
             <input
               type="email"
               required
@@ -88,8 +98,12 @@ export default function Auth() {
               placeholder="you@example.com"
             />
           </div>
+
           <div>
-            <label className="block text-xs tracking-[0.15em] uppercase text-charcoal/70 mb-2">Password</label>
+            <label className="block text-xs tracking-[0.15em] uppercase text-charcoal/70 mb-2">
+              Password
+            </label>
+
             <input
               type="password"
               required
@@ -99,13 +113,19 @@ export default function Auth() {
               placeholder="••••••••"
             />
           </div>
-          <button type="submit" disabled={loading} className="btn-gold w-full flex items-center justify-center gap-2">
-            {loading && <Loader2 className="w-4 h-4 animate-spin" />}
-            {mode === "signin" ? "Sign In" : "Create Account"}
+
+          <button
+            type="submit"
+            disabled={loading}
+            className="btn-gold w-full flex items-center justify-center gap-2"
+          >
+            {loading && (
+              <Loader2 className="w-4 h-4 animate-spin" />
+            )}
+
+            Sign In
           </button>
         </form>
-
-        {/* Signup disabled: admin accounts are managed manually. */}
       </motion.div>
     </div>
   );
