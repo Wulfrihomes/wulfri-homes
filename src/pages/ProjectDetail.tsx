@@ -1,11 +1,38 @@
 import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Check, Download, MessageCircle, ArrowLeft, ChevronLeft, ChevronRight, Calendar } from "lucide-react";
+import { MapPin, Check, Download, MessageCircle, ArrowLeft, ChevronLeft, ChevronRight, Calendar, ShieldCheck, TrendingUp, Wallet, Building2, Sparkles, PlayCircle } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { getProjectBySlug, WHATSAPP_NUMBER } from "@/data/wulfri";
 import { ProjectCard } from "@/components/ProjectCard";
 import { projects } from "@/data/wulfri";
+
+const emiratesUsps = [
+  { icon: ShieldCheck, title: "Verified C of O Title", desc: "Genuine title with government-backed documentation" },
+  { icon: MapPin, title: "Prime Location", desc: "Ewu-Ode before Interchange, Mowe-Ofada, Ogun" },
+  { icon: TrendingUp, title: "40% ROI Projected", desc: "Fast-appreciating corridor with proven historical growth" },
+  { icon: Wallet, title: "Flexible Payment", desc: "Outright, 3, 6 and 12-month structured plans" },
+  { icon: Building2, title: "Full Infrastructure", desc: "Roads, drainage, security, street lighting delivered" },
+  { icon: Sparkles, title: "Ready for Allocation", desc: "Physical allocation within 30 days of full payment" },
+];
+
+const emiratesGallery = [
+  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=80",
+  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1400&q=80",
+  "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1400&q=80",
+  "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1400&q=80",
+  "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1400&q=80",
+  "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1400&q=80",
+];
+
+const lushvilleGallery = [
+  "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1400&q=80",
+  "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1400&q=80",
+  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1400&q=80",
+  "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1400&q=80",
+  "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1400&q=80",
+  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=80",
+];
 
 const ProjectDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -28,12 +55,24 @@ const ProjectDetail = () => {
   )}`;
 
   const related = projects.filter((p) => p.type === project.type && p.id !== project.id).slice(0, 3);
+  const specialLandingRoute =
+    project.slug === "emirates-parks-gardens"
+      ? "/emirates-parks-gardens"
+      : project.slug === "lushville-estate"
+        ? "/lushville-estate"
+        : null;
+  const heroImage = project.heroImage || project.gallery[activeImg] || project.gallery[0];
+  const lushvilleHighlights = [
+    { title: "Secure Gated Community", desc: "24/7 security, controlled access and dedicated gate house" },
+    { title: "Prime Ibadan Location", desc: "Strategically positioned in Lamini-Apete, close to growing infrastructure" },
+    { title: "Transparent Pricing", desc: "All prices are inclusive with no hidden charges" },
+  ];
 
   return (
     <Layout>
       {/* Hero image */}
       <section className="relative h-[80vh] pt-20 overflow-hidden bg-charcoal">
-        <img src={project.gallery[activeImg]} alt={project.name} className="absolute inset-0 w-full h-full object-cover" />
+        <img src={heroImage} alt={project.name} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/40 to-charcoal/60" />
         <div className="relative container-full h-full flex flex-col justify-end pb-20">
           <Link to="/projects" className="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-ivory/70 hover:text-primary mb-8 w-fit">
@@ -50,6 +89,11 @@ const ProjectDetail = () => {
               <span>{project.location}, {project.state} State</span>
             </div>
             <p className="text-lg text-ivory/80 max-w-2xl">{project.tagline}</p>
+            {specialLandingRoute && (
+              <Link to={specialLandingRoute} className="inline-flex items-center mt-6 text-sm font-medium text-primary hover:text-primary/80">
+                Explore the dedicated project experience →
+              </Link>
+            )}
           </motion.div>
 
           {/* Gallery thumbs */}
@@ -78,6 +122,125 @@ const ProjectDetail = () => {
               <h2 className="font-serif text-3xl md:text-4xl text-charcoal leading-[1.15] mb-6">About this development</h2>
               <p className="text-muted-foreground leading-relaxed text-lg">{project.description}</p>
             </div>
+
+            {project.slug === "lushville-estate" && (
+              <>
+                <div>
+                  <p className="eyebrow mb-4">Why Lushville Estate</p>
+                  <h2 className="font-serif text-3xl md:text-4xl text-charcoal leading-[1.15] mb-8">Developed for comfort, value and long-term growth.</h2>
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    {lushvilleHighlights.map((item) => (
+                      <div key={item.title} className="bg-linen border border-border p-6">
+                        <h3 className="font-serif text-lg text-charcoal mb-1">{item.title}</h3>
+                        <p className="text-sm text-stone">{item.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <p className="eyebrow mb-4">Estate Video</p>
+                  <h2 className="font-serif text-3xl md:text-4xl text-charcoal leading-[1.15] mb-8">Take a virtual tour.</h2>
+                  <div className="relative aspect-video bg-charcoal overflow-hidden group cursor-pointer">
+                    <img
+                      src={lushvilleGallery[0]}
+                      alt="Lushville Estate video preview"
+                      className="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <PlayCircle className="w-20 h-20 text-primary drop-shadow-lg group-hover:scale-110 transition-transform" strokeWidth={1.2} />
+                    </div>
+                    <div className="absolute bottom-4 left-4 text-ivory text-xs tracking-[0.2em] uppercase bg-charcoal/60 px-3 py-1">
+                      Coming soon
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <p className="eyebrow mb-4">Estate Preview</p>
+                  <h2 className="font-serif text-3xl md:text-4xl text-charcoal leading-[1.15] mb-8">A polished estate experience from the first impression.</h2>
+                  <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
+                    {lushvilleGallery.map((src, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.05 }}
+                        className={`overflow-hidden ${i === 0 ? "lg:col-span-2 lg:row-span-2 aspect-square lg:aspect-auto" : "aspect-square"}`}
+                      >
+                        <img src={src} alt={`Lushville Estate view ${i + 1}`} loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              </>
+            )}
+
+            {project.slug === "emirates-parks-gardens" && (
+              <>
+                {/* Why Emirates Parks & Gardens */}
+                <div>
+                  <p className="eyebrow mb-4">Why Emirates Parks & Gardens</p>
+                  <h2 className="font-serif text-3xl md:text-4xl text-charcoal leading-[1.15] mb-8">Built for Legacy. Priced for Growth.</h2>
+                  <div className="grid sm:grid-cols-2 gap-5">
+                    {emiratesUsps.map((u, i) => (
+                      <motion.div
+                        key={u.title}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.05 }}
+                        className="bg-linen border border-border p-6 hover:border-primary transition-colors"
+                      >
+                        <u.icon className="w-7 h-7 text-primary mb-3" />
+                        <h3 className="font-serif text-lg text-charcoal mb-1">{u.title}</h3>
+                        <p className="text-sm text-stone">{u.desc}</p>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Video */}
+                <div>
+                  <p className="eyebrow mb-4">Estate Video</p>
+                  <h2 className="font-serif text-3xl md:text-4xl text-charcoal leading-[1.15] mb-8">Take a virtual tour.</h2>
+                  <div className="relative aspect-video bg-charcoal overflow-hidden group cursor-pointer">
+                    <img
+                      src={emiratesGallery[0]}
+                      alt="Emirates Parks & Gardens video preview"
+                      className="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <PlayCircle className="w-20 h-20 text-primary drop-shadow-lg group-hover:scale-110 transition-transform" strokeWidth={1.2} />
+                    </div>
+                    <div className="absolute bottom-4 left-4 text-ivory text-xs tracking-[0.2em] uppercase bg-charcoal/60 px-3 py-1">
+                      Coming soon
+                    </div>
+                  </div>
+                </div>
+
+                {/* Estate Preview */}
+                <div>
+                  <p className="eyebrow mb-4">Estate Preview</p>
+                  <h2 className="font-serif text-3xl md:text-4xl text-charcoal leading-[1.15] mb-8">Life at Emirates Parks.</h2>
+                  <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
+                    {emiratesGallery.map((src, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.05 }}
+                        className={`overflow-hidden ${i === 0 ? "lg:col-span-2 lg:row-span-2 aspect-square lg:aspect-auto" : "aspect-square"}`}
+                      >
+                        <img src={src} alt={`Estate view ${i + 1}`} loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              </>
+            )}
 
             {project.plotSizes && (
               <div>
@@ -114,7 +277,9 @@ const ProjectDetail = () => {
                 </div>
               </div>
             </div>
+
           </div>
+
 
           {/* Sticky sidebar */}
           <aside className="lg:sticky lg:top-28 lg:self-start space-y-6">
@@ -132,7 +297,7 @@ const ProjectDetail = () => {
                 ))}
               </div>
 
-              <Link to="/contact" className="w-full inline-flex items-center justify-center gap-2 h-12 bg-primary text-ivory text-xs tracking-[0.2em] uppercase hover:bg-primary/90 transition-colors mb-3">
+              <Link to={specialLandingRoute || "/contact"} className="w-full inline-flex items-center justify-center gap-2 h-12 bg-primary text-ivory text-xs tracking-[0.2em] uppercase hover:bg-primary/90 transition-colors mb-3">
                 <Calendar className="w-4 h-4" /> Book Inspection
               </Link>
               <a href={waLink} target="_blank" rel="noopener noreferrer" className="w-full inline-flex items-center justify-center gap-2 h-12 bg-[#25D366] text-white text-xs tracking-[0.2em] uppercase hover:opacity-90 transition-opacity mb-3">
