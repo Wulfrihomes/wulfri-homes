@@ -20,6 +20,7 @@ export interface Project {
   paymentPlans: { label: string; value: string }[];
   featured?: boolean;
   mapEmbed?: string;
+  mapLink?: string;
 }
 
 export const projects: Project[] = [
@@ -58,6 +59,13 @@ export const projects: Project[] = [
       { label: "Outright (600sqm)", value: "₦14.5M" },
       { label: "Outright (Commercial)", value: "₦20M" },
     ],
+
+    mapEmbed:
+      "",
+
+    mapLink: 
+      "",
+
     featured: true,
   },
   {
@@ -91,7 +99,14 @@ export const projects: Project[] = [
       { label: "Instant (300sqm)", value: "₦5.1M" },
       { label: "Instant (500sqm)", value: "₦7.3M" },
       { label: "Instant (Commercial)", value: "₦8.5M" },
-    ],
+     ],
+    
+    mapEmbed:
+  "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3955.7119340373706!2d3.82059207500206!3d7.497021992515315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMjknNDkuMyJOIDPCsDQ5JzIzLjQiRQ!5e0!3m2!1sen!2sng!4v1783673742916!5m2!1sen!2sng",
+
+mapLink:
+  "https://goo.gl/maps/cEpwqDCnDJavJ58b7",
+
     featured: true,
   },
   {
@@ -118,7 +133,14 @@ export const projects: Project[] = [
       { label: "Outright", value: "₦6.5M" },
       { label: "6 Months", value: "₦7.2M" },
       { label: "12 Months", value: "₦8.4M" },
-    ],
+     ],
+    
+    mapEmbed:
+      "",
+
+    mapLink: 
+      "",
+
     featured: true,
   },
   {
@@ -144,6 +166,13 @@ export const projects: Project[] = [
       { label: "Outright", value: "₦12M" },
       { label: "12 Months", value: "₦15M" },
     ],
+    
+    mapEmbed:
+      "",
+
+    mapLink: 
+      "",
+
     featured: true,
   },
   {
@@ -177,7 +206,14 @@ export const projects: Project[] = [
     paymentPlans: [
       { label: "Fully Detached", value: "₦85M" },
       { label: "Luxury Villa", value: "₦180M" },
-    ],
+     ],
+    
+    mapEmbed:
+      "",
+
+    mapLink: 
+      "",
+
     featured: true,
   },
   {
@@ -203,7 +239,14 @@ export const projects: Project[] = [
     paymentPlans: [
       { label: "Outright", value: "₦120M" },
       { label: "12 Months", value: "₦135M" },
-    ],
+     ],
+    
+    mapEmbed:
+      "",
+
+    mapLink: 
+      "",
+
     featured: true,
   },
   {
@@ -230,6 +273,13 @@ export const projects: Project[] = [
       { label: "Outright", value: "₦250M" },
       { label: "24 Months", value: "₦290M" },
     ],
+    
+   mapEmbed:
+      "",
+
+    mapLink: 
+      "",
+
     featured: true,
   },
   {
@@ -256,6 +306,14 @@ export const projects: Project[] = [
       { label: "Outright", value: "₦45M" },
       { label: "12 Months", value: "₦52M" },
     ],
+    
+    mapEmbed:
+      "",
+
+    mapLink: 
+      "",
+
+    featured: true,
   },
 ];
 
@@ -367,7 +425,7 @@ export const blogPosts = [
   },
 ];
 
-export const WHATSAPP_NUMBER = "234 802 7057 374";
-export const PHONE_NUMBER = "+234 802 7057 374";
+export const WHATSAPP_NUMBER = "2348027057374";
+export const PHONE_NUMBER = "2348027057374";
 export const EMAIL = "info@wulfrihomes.com.ng";
 export const OFFICE_ADDRESS = "Plot 106, Ademola Ajasa Street, Omole Phase 1, Ikeja, Lagos, Nigeria";

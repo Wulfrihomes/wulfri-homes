@@ -255,16 +255,51 @@ const ProjectDetail = () => {
               </div>
             </div>
 
-            <div>
-              <p className="eyebrow mb-4">Location</p>
-              <div className="aspect-video bg-linen border border-border flex items-center justify-center text-muted-foreground">
-                <div className="text-center">
-                  <MapPin className="w-8 h-8 text-primary mx-auto mb-2" />
-                  <p className="text-sm">{project.location}</p>
-                  <p className="text-xs mt-1">https://goo.gl/maps/cEpwqDCnDJavJ58b7</p>
-                </div>
-              </div>
-            </div>
+<div>
+  <p className="eyebrow mb-4">Location</p>
+
+  <h2 className="font-serif text-3xl md:text-4xl text-charcoal leading-[1.15] mb-6">
+    Locate this development
+  </h2>
+
+  {project.mapEmbed ? (
+    <>
+      <div className="overflow-hidden rounded-xl border border-border shadow-md">
+        <iframe
+          src={project.mapEmbed}
+          width="100%"
+          height="450"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title={`${project.name} Google Map`}
+        />
+      </div>
+
+      {project.mapLink && (
+        <div className="mt-5 text-center">
+          <a
+            href={project.mapLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-primary text-white hover:bg-primary/90 transition"
+          >
+            <MapPin className="w-5 h-5" />
+            Open in Google Maps
+          </a>
+        </div>
+      )}
+    </>
+  ) : (
+    <div className="rounded-xl border border-border bg-linen p-12 text-center">
+      <MapPin className="w-10 h-10 text-primary mx-auto mb-3" />
+      <p className="text-muted-foreground">
+        Map location will be available soon.
+      </p>
+    </div>
+  )}
+</div>
 
           </div>
 
