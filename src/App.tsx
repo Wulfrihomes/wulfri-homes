@@ -19,6 +19,7 @@ import FAQs from "./pages/FAQs";
 import Contact from "./pages/Contact";
 import EmiratesLanding from "./pages/EmiratesLanding";
 import LushvilleLanding from "./pages/LushvilleLanding";
+import ProjectLanding from "./pages/ProjectLanding";
 import Auth from "./pages/Auth";
 import AdminDashboard from "./pages/AdminDashboard";
 import NotFound from "./pages/NotFound";
@@ -47,6 +48,12 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/emirates-parks-gardens" element={<EmiratesLanding />} />
             <Route path="/lushville-estate" element={<LushvilleLanding />} />
+            <Route path="/country-home-estate" element={<ProjectLanding />} />
+            <Route path="/imperial-gardens" element={<ProjectLanding />} />
+            <Route path="/wulfri-smart-city" element={<ProjectLanding />} />
+            <Route path="/emerald-court" element={<ProjectLanding />} />
+            <Route path="/royal-crest-estate" element={<ProjectLanding />} />
+            <Route path="/wulfri-commercial-park" element={<ProjectLanding />} />
             <Route path="/auth" element={<Auth />} />
             <Route
               path="/admin"
