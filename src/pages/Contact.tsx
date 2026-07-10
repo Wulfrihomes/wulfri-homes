@@ -68,6 +68,7 @@ const Contact = () => {
                   <label className="text-xs tracking-[0.2em] uppercase text-stone mb-2 block">Project of Interest</label>
                   <select className="w-full h-12 px-4 bg-linen border border-border focus:outline-none focus:border-primary text-charcoal">
                     <option>Emirates Parks & Gardens</option>
+                    <option>Lushville Estate</option>
                     <option>Country Home Estate</option>
                     <option>Imperial Gardens</option>
                     <option>Wulfri Smart City</option>
@@ -121,7 +122,7 @@ const Contact = () => {
                   <Clock className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                   <div>
                     <div className="text-[10px] tracking-[0.3em] uppercase text-ivory/50 mb-1">Hours</div>
-                    <div className="text-sm text-ivory/80">Mon–Sat, 9am–6pm WAT</div>
+                    <div className="text-sm text-ivory/80">Mon–Fri, 9am–5pm / Sat, 9am–1pm WAT</div>
                   </div>
                 </div>
               </div>

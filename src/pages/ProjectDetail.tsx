@@ -63,9 +63,12 @@ const ProjectDetail = () => {
         : null;
   const heroImage = project.heroImage || project.gallery[activeImg] || project.gallery[0];
   const lushvilleHighlights = [
-    { title: "Secure Gated Community", desc: "24/7 security, controlled access and dedicated gate house" },
-    { title: "Prime Ibadan Location", desc: "Strategically positioned in Lamini-Apete, close to growing infrastructure" },
-    { title: "Transparent Pricing", desc: "All prices are inclusive with no hidden charges" },
+  { icon: ShieldCheck, title: "Verified C of O Title", desc: "Genuine title with government-backed documentation" },
+  { icon: MapPin, title: "Prime Location", desc: "Strategically positioned in Lamini-Apete, close to University of Ibadan, Ibadan Poly, Lifeforte International School, Lagos-Ibadan train station" },
+  { icon: TrendingUp, title: "25% ROI Projected", desc: "Fast-appreciating corridor with proven historical growth" },
+  { icon: Wallet, title: "Flexible Payment", desc: "Outright, 3, 6, 12 and 18-month structured plans" },
+  { icon: Building2, title: "Full Infrastructure", desc: "Roads, drainage, security, street lighting delivered" },
+  { icon: Sparkles, title: "Ready for Allocation", desc: "Physical allocation within 30 days of full payment" },
   ];
 
   return (
@@ -74,42 +77,27 @@ const ProjectDetail = () => {
       <section className="relative h-[80vh] pt-20 overflow-hidden bg-charcoal">
         <img src={heroImage} alt={project.name} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/40 to-charcoal/60" />
-        <div className="relative container-full h-full flex flex-col justify-end pb-20">
-          <Link to="/projects" className="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-white hover:text-[#D97706] mb-8 w-fit transition-colors">
-            <ArrowLeft className="w-4 h-4" /> Back to Projects
-          </Link>
+        <div className="relative container-full h-full flex flex-col justify-end pb-16">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
-            <div className="flex flex-wrap gap-2 mb-4">
-              <span className="px-3 py-1 text-[10px] tracking-[0.2em] uppercase bg-[#D97706] text-white font-semibold">{project.status}</span>
-              <span className="px-3 py-1 text-[10px] tracking-[0.2em] uppercase border border-white/40 text-white">{project.type}</span>
+            <Link to="/projects" className="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-white hover:text-[#D97706] w-fit transition-colors mb-4">
+              <ArrowLeft className="w-4 h-4" /> Back to Projects
+            </Link>
+            <div className="flex flex-wrap gap-2 mb-6">
+              <span className="px-4 py-1 text-[10px] tracking-[0.2em] uppercase bg-[#D97706] text-white font-semibold">{project.status}</span>
+              <span className="px-4 py-1 text-[10px] tracking-[0.2em] uppercase border border-white/40 text-white">{project.type}</span>
             </div>
             <h1 className="font-serif text-5xl md:text-7xl text-white leading-[0.95] mb-6">{project.name}</h1>
             <div className="flex items-center gap-2 text-white mb-6">
               <MapPin className="w-4 h-4 text-[#D97706]" />
-              <span>{project.location}, {project.state} State</span>
+              <span className="text-base">{project.location}, {project.state} State</span>
             </div>
             <p className="text-lg text-white max-w-2xl leading-relaxed">{project.tagline}</p>
             {specialLandingRoute && (
-              <Link to={specialLandingRoute} className="inline-flex items-center mt-6 text-sm font-medium text-[#D97706] hover:text-[#B45309]">
+              <Link to={specialLandingRoute} className="inline-flex items-center mt-8 text-sm font-medium text-[#D97706] hover:text-[#B45309] transition-colors">
                 Explore the dedicated project experience →
               </Link>
             )}
           </motion.div>
-
-          {/* Gallery thumbs */}
-          <div className="mt-10 flex gap-3 overflow-x-auto pb-2">
-            {project.gallery.map((img, i) => (
-              <button
-                key={i}
-                onClick={() => setActiveImg(i)}
-                className={`flex-shrink-0 w-20 h-16 md:w-28 md:h-20 overflow-hidden border-2 transition-all ${
-                  activeImg === i ? "border-primary" : "border-ivory/20 opacity-60 hover:opacity-100"
-                }`}
-              >
-                <img src={img} alt="" className="w-full h-full object-cover" />
-              </button>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -273,7 +261,7 @@ const ProjectDetail = () => {
                 <div className="text-center">
                   <MapPin className="w-8 h-8 text-primary mx-auto mb-2" />
                   <p className="text-sm">{project.location}</p>
-                  <p className="text-xs mt-1">Google Map embed available on request</p>
+                  <p className="text-xs mt-1">https://goo.gl/maps/cEpwqDCnDJavJ58b7</p>
                 </div>
               </div>
             </div>

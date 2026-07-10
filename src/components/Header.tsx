@@ -49,13 +49,13 @@ export const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <div className="w-9 h-9 border-2 border-primary flex items-center justify-center">
-              <span className="font-serif text-lg text-primary">W</span>
+              <span className="font-serif text-lg text-primary"> WH </span>
             </div>
             <div className="leading-none">
               <div className={cn("font-serif text-xl tracking-tight transition-colors", scrolled ? "text-charcoal" : "text-charcoal")}>
                 Wulfri Homes
               </div>
-              <div className="text-[9px] tracking-[0.3em] uppercase text-stone mt-1">Est. 2016</div>
+              <div className="text-[9px] tracking-[0.3em] uppercase text-stone mt-1">Est. 2022</div>
             </div>
           </Link>
 

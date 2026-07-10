@@ -11,11 +11,11 @@ export const Footer = () => {
           <div className="lg:col-span-4">
             <Link to="/" className="flex items-center gap-2 group">
               <div className="w-10 h-10 border-2 border-primary flex items-center justify-center">
-                <span className="font-serif text-xl text-primary">W</span>
+                <span className="font-serif text-xl text-primary"> WH </span>
               </div>
               <div className="leading-none">
                 <div className="font-serif text-2xl text-ivory">Wulfri Homes</div>
-                <div className="text-[9px] tracking-[0.3em] uppercase text-ivory/50 mt-1">Est. 2016</div>
+                <div className="text-[9px] tracking-[0.3em] uppercase text-ivory/50 mt-1">Est. 2022</div>
               </div>
             </Link>
             <p className="mt-6 text-sm text-ivory/60 leading-relaxed max-w-sm">
@@ -93,7 +93,7 @@ export const Footer = () => {
                   {EMAIL}
                 </a>
               </li>
-              <li className="text-ivory/40">Mon–Sat, 9am–6pm WAT</li>
+              <li className="text-ivory/40">Mon–Fri, 9am–5pm / Sat, 9am–1pm WAT</li>
             </ul>
 
             <div className="mt-6 flex gap-4">
@@ -115,7 +115,7 @@ export const Footer = () => {
       <div className="border-t border-ivory/10">
         <div className="container-full py-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-ivory/40">
-            © {new Date().getFullYear()} Wulfri Homes Limited. All rights reserved. RC 1450832.
+            © {new Date().getFullYear()} Wulfri Homes Limited. All rights reserved.
           </p>
           <div className="flex gap-8">
             <a href="#" className="text-xs text-ivory/40 hover:text-primary transition-colors">Privacy Policy</a>

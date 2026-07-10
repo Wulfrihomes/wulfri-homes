@@ -19,7 +19,7 @@ const gallery = [
 
 const usps = [
   { icon: ShieldCheck, title: "Secure Gated Community", desc: "24/7 security, controlled access and dedicated gate house" },
-  { icon: MapPin, title: "Prime Ibadan Location", desc: "Strategically positioned in Lamini-Apete, close to growing infrastructure" },
+  { icon: MapPin, title: "Prime Ibadan Location", desc: "Strategically positioned in Lamini-Apete, and close to  University of Ibadan, Ibadan Poly, Lifeforte International school, Lagos-Ibadan train station." },
   { icon: TrendingUp, title: "Flexible Growth Plans", desc: "Plots available with up to 18-month payment flexibility" },
   { icon: Wallet, title: "Transparent Pricing", desc: "All prices are inclusive with no hidden charges" },
   { icon: Building2, title: "Modern Infrastructure", desc: "Interlocked roads, drainage, street lighting and perimeter fencing" },

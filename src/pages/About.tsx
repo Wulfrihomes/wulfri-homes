@@ -11,11 +11,10 @@ const values = [
 ];
 
 const timeline = [
-  { year: "2016", title: "Founded in Lagos", desc: "Wulfri Homes launches with a single 25-plot estate in Ibeju-Lekki." },
-  { year: "2018", title: "Expansion into Ogun", desc: "First Mowe corridor development opens; 100% subscription in 90 days." },
-  { year: "2021", title: "Abuja Debut", desc: "Royal Crest Estate launches, marking entry into the FCT luxury market." },
-  { year: "2023", title: "10,000+ Subscribers", desc: "Crossed 10,000 subscribers with a 98% client satisfaction rating." },
-  { year: "2026", title: "Smart City Vision", desc: "Wulfri Smart City breaks ground — Nigeria's most connected community." },
+  { year: "2022", title: "Founded in Lagos", desc: "Wulfri Homes launches with a mission to redefine trust in Nigerian real estate.." },
+  { year: "2023", title: "Expansion into Ogun", desc: "First Mowe corridor development opens; 45% subscription in 90 days." },
+  { year: "2025", title: "1,000+ Subscribers", desc: "Crossed 1,000 subscribers with a 98% client satisfaction rating." },
+  { year: "2025", title: "Diaspora Programme", desc: "Dedicated service line launches for Nigerians in the UK, US, Canada and the UAE." },
 ];
 
 const About = () => {
@@ -30,10 +29,10 @@ const About = () => {
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
             <p className="eyebrow mb-6">Our Story</p>
             <h1 className="font-serif text-5xl md:text-7xl leading-[1.05] mb-8">
-              A decade of <span className="italic text-primary">quiet excellence</span> in Nigerian real estate.
+              Years of <span className="italic text-primary">quiet excellence</span> in Nigerian real estate.
             </h1>
             <p className="text-lg text-ivory/70 leading-relaxed">
-              From a single estate in Ibeju-Lekki to a portfolio spanning three states, Wulfri Homes has quietly built one of Nigeria's most respected real estate portfolios—by keeping every promise, honouring every title, and treating every client like family.
+              From a single estate in Ibeju-Lekki to a portfolio spanning across Nigeria, Wulfri Homes has quietly built one of Nigeria's most respected real estate portfolios—by keeping every promise, honouring every title, and treating every client like family.
             </p>
           </motion.div>
         </div>
@@ -51,7 +50,7 @@ const About = () => {
               To make premium property ownership accessible, transparent and profitable for every Nigerian.
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              We exist to democratize wealth creation through real estate—offering flexible plans, verified titles and world-class infrastructure to buyers at every stage of their journey.
+              We exist to democratize wealth creation through real estate. Offering flexible plans, verified titles and world-class infrastructure to buyers at every stage of their journey.
             </p>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }}>
@@ -60,10 +59,10 @@ const About = () => {
               <p className="eyebrow">Our Vision</p>
             </div>
             <h2 className="font-serif text-3xl md:text-4xl text-charcoal leading-[1.15] mb-6">
-              To be West Africa's most trusted real estate brand by 2035.
+              To be Africa's most trusted real estate brand.
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              A brand synonymous with integrity, innovation and lasting value—setting the benchmark for how premium real estate is delivered across the continent.
+              A brand synonymous with integrity, innovation and lasting value. Setting the benchmark for how premium real estate is delivered across the continent.
             </p>
           </motion.div>
         </div>
@@ -99,7 +98,7 @@ const About = () => {
         <div className="container-narrow">
           <p className="eyebrow mb-4 text-center">Our Journey</p>
           <h2 className="font-serif text-4xl md:text-5xl text-charcoal leading-[1.05] mb-16 text-center">
-            A decade in the making.
+            Years of delivered promises.
           </h2>
           <div className="space-y-12 relative before:absolute before:left-[7.5rem] before:top-2 before:bottom-2 before:w-px before:bg-border hidden md:block">
             {timeline.map((t, i) => (

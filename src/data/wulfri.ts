@@ -55,9 +55,8 @@ export const projects: Project[] = [
     plotSizes: ["300 sqm", "600 sqm", "Commercial"],
     paymentPlans: [
       { label: "Outright (300sqm)", value: "₦8.25M" },
-      { label: "3 Months (300sqm)", value: "₦8.85M" },
-      { label: "6 Months (300sqm)", value: "₦9.5M" },
-      { label: "12 Months (300sqm)", value: "₦10.5M" },
+      { label: "Outright (600sqm)", value: "₦14.5M" },
+      { label: "Outright (Commercial)", value: "₦20M" },
     ],
     featured: true,
   },
@@ -72,7 +71,7 @@ export const projects: Project[] = [
     status: "Selling Fast",
     tagline: "Now selling in Ibadan — developed by Lexshield Properties",
     description:
-      "A master-planned residential estate located in Lamini-Apete, Ibadan. Lushville Estate offers 300sqm, 500sqm and commercial plots with flexible payment plans of up to 18 months. All prices inclusive — no hidden charges.",
+      "A master-planned residential estate designed to offer a blend of modern living and serene environments, with state-of-the-art amenities and green spaces. This project focuses on providing premium lifestyle for residents and subscribers.",
     heroImage: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1920&q=80",
     gallery: [
       "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
@@ -92,7 +91,6 @@ export const projects: Project[] = [
       { label: "Instant (300sqm)", value: "₦5.1M" },
       { label: "Instant (500sqm)", value: "₦7.3M" },
       { label: "Instant (Commercial)", value: "₦8.5M" },
-      { label: "18 Months (300sqm)", value: "₦7.5M" },
     ],
     featured: true,
   },
@@ -271,7 +269,7 @@ export const whyChooseUs = [
   { title: "Prime Locations", desc: "Strategic sites in Lagos, Ogun, Abuja and other appreciating corridors.", icon: "MapPin" },
   { title: "Fast Appreciation", desc: "Properties historically appreciating 25–40% year-on-year.", icon: "TrendingUp" },
   { title: "Infrastructure Development", desc: "Roads, drainage, power and security delivered before allocation.", icon: "Building2" },
-  { title: "Trusted Partner", desc: "A decade of delivering value to Nigerian and diaspora investors.", icon: "Handshake" },
+  { title: "Trusted Partner", desc: "Years of delivering value to Nigerian and diaspora investors.", icon: "Handshake" },
 ];
 
 export const testimonials = [
@@ -369,7 +367,7 @@ export const blogPosts = [
   },
 ];
 
-export const WHATSAPP_NUMBER = "2348000000000";
-export const PHONE_NUMBER = "+234 800 000 0000";
-export const EMAIL = "hello@wulfrihomes.com.ng";
-export const OFFICE_ADDRESS = "Plot 12, Admiralty Way, Lekki Phase 1, Lagos, Nigeria";
+export const WHATSAPP_NUMBER = "234 802 7057 374";
+export const PHONE_NUMBER = "+234 802 7057 374";
+export const EMAIL = "info@wulfrihomes.com.ng";
+export const OFFICE_ADDRESS = "Plot 106, Ademola Ajasa Street, Omole Phase 1, Ikeja, Lagos, Nigeria";

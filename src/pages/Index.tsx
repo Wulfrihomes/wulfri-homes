@@ -154,7 +154,7 @@ const Index = () => {
             />
             <div className="absolute bottom-6 left-6 right-6 bg-ivory/95 backdrop-blur p-6">
               <div className="text-[10px] tracking-[0.3em] uppercase text-primary mb-2">Legacy in Motion</div>
-              <div className="font-serif text-xl text-charcoal">Over ₦45B in assets delivered since 2016</div>
+              <div className="font-serif text-xl text-charcoal">Over ₦45B in assets delivered since 2022</div>
             </div>
           </motion.div>
 
@@ -168,7 +168,7 @@ const Index = () => {
             </p>
             <div className="flex items-center gap-4 pt-8 border-t border-ivory/10">
               <div>
-                <div className="font-serif text-lg text-ivory">Adekunle Wulfri</div>
+                <div className="font-serif text-lg text-ivory">Abayomi S. Pelemo</div>
                 <div className="text-xs tracking-[0.15em] uppercase text-ivory/50">Founder & CEO</div>
               </div>
             </div>
