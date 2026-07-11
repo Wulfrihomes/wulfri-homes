@@ -1,9 +1,9 @@
 import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Check, Download, MessageCircle, ArrowLeft, ChevronLeft, ChevronRight, Calendar, ShieldCheck, TrendingUp, Wallet, Building2, Sparkles, PlayCircle, Users, Smartphone, Zap, Map, Home, Cpu, Star, ShoppingBag } from "lucide-react";
+import { MapPin, Check, Download, MessageCircle, ArrowLeft, ChevronLeft, ChevronRight, Calendar, ShieldCheck, TrendingUp, Wallet, Building2, Sparkles, PlayCircle } from "lucide-react";
 import { Layout } from "@/components/Layout";
-import { getProjectBySlug, projectDetailContent, WHATSAPP_NUMBER, projectLandingConfigs } from "@/data/wulfri";
+import { getProjectBySlug, projectDetailContent, WHATSAPP_NUMBER } from "@/data/wulfri";
 import { ProjectCard } from "@/components/ProjectCard";
 import { projects } from "@/data/wulfri";
 
@@ -28,11 +28,29 @@ const ProjectDetail = () => {
   )}`;
 
   const related = projects.filter((p) => p.type === project.type && p.id !== project.id).slice(0, 3);
-  const landingRoute = projectLandingConfigs[project.slug]?.route ?? null;
-  const heroImage = project.heroImage || project.gallery[activeImg] || project.gallery[0];
-  const detailContent = projectDetailContent[project.slug];
-  const previewImages = detailContent?.galleryPreview?.length ? detailContent.galleryPreview : project.gallery;
 
+const specialLandingRoute =
+  project.slug === "emirates-parks-gardens"
+    ? "/emirates-parks-gardens"
+    : project.slug === "lushville-estate"
+    ? "/lushville-estate"
+    : project.slug === "country-home-estate"
+    ? "/country-home-estate"
+    : project.slug === "imperial-gardens"
+    ? "/imperial-gardens"
+    : project.slug === "wulfri-smart-city"
+    ? "/wulfri-smart-city"
+    : project.slug === "emerald-court"
+    ? "/emerald-court"
+    : project.slug === "royal-crest-estate"
+    ? "/royal-crest-estate"
+    : project.slug === "wulfri-commercial-park"
+    ? "/wulfri-commercial-park"
+    : null;
+
+const heroImage = project.heroImage || project.gallery[activeImg] || project.gallery[0];
+const detailContent = projectDetailContent[project.slug];
+const previewImages = detailContent?.galleryPreview?.length ? detailContent.galleryPreview : project.gallery;
   return (
     <Layout>
       {/* Hero image */}
@@ -54,8 +72,8 @@ const ProjectDetail = () => {
               <span className="text-base">{project.location}, {project.state} State</span>
             </div>
             <p className="text-lg text-white max-w-2xl leading-relaxed">{project.tagline}</p>
-            {landingRoute && (
-              <Link to={landingRoute} className="inline-flex items-center mt-8 text-sm font-medium text-[#D97706] hover:text-[#B45309] transition-colors">
+            {specialLandingRoute && (
+              <Link to={specialLandingRoute} className="inline-flex items-center mt-8 text-sm font-medium text-[#D97706] hover:text-[#B45309] transition-colors">
                 Explore the dedicated project experience →
               </Link>
             )}
@@ -79,24 +97,19 @@ const ProjectDetail = () => {
                   <p className="eyebrow mb-4">{detailContent.eyebrow}</p>
                   <h2 className="font-serif text-3xl md:text-4xl text-charcoal leading-[1.15] mb-8">{detailContent.heading}</h2>
                   <div className="grid sm:grid-cols-2 gap-5">
-                        {detailContent.highlights.map((u, i) => {
-                          const iconMap: Record<string, any> = { ShieldCheck, MapPin, TrendingUp, Wallet, Building2, Sparkles, Users, Smartphone, Zap, Map, Home, Cpu, Star, ShoppingBag, Check };
-                          const Icon = iconMap[u.icon as string] || Check;
-                          return (
-                            <motion.div
-                              key={u.title}
-                              initial={{ opacity: 0, y: 20 }}
-                              whileInView={{ opacity: 1, y: 0 }}
-                              viewport={{ once: true }}
-                              transition={{ delay: i * 0.05 }}
-                              className="bg-linen border border-border p-6 hover:border-primary transition-colors"
-                            >
-                              <Icon className="w-6 h-6 text-primary mb-3" />
-                              <h3 className="font-serif text-lg text-charcoal mb-1">{u.title}</h3>
-                              <p className="text-sm text-stone">{u.desc}</p>
-                            </motion.div>
-                          );
-                        })}
+                    {detailContent.highlights.map((u, i) => (
+                      <motion.div
+                        key={u.title}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.05 }}
+                        className="bg-linen border border-border p-6 hover:border-primary transition-colors"
+                      >
+                        <h3 className="font-serif text-lg text-charcoal mb-1">{u.title}</h3>
+                        <p className="text-sm text-stone">{u.desc}</p>
+                      </motion.div>
+                    ))}
                   </div>
                 </div>
 
