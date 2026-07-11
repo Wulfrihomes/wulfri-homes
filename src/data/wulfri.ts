@@ -345,12 +345,12 @@ export const projectDetailContent: Record<string, ProjectDetailContent> = {
     heading: "Built for Legacy. Priced for Growth.",
     previewHeading: "Life at Emirates Parks.",
     highlights: [
-      { title: "Verified C of O Title", desc: "Genuine title with government-backed documentation" },
-      { title: "Prime Location", desc: "Ewu-Ode before Interchange, Mowe-Ofada, Ogun" },
-      { title: "40% ROI Projected", desc: "Fast-appreciating corridor with proven historical growth" },
-      { title: "Flexible Payment", desc: "Outright, 3, 6 and 12-month structured plans" },
-      { title: "Full Infrastructure", desc: "Roads, drainage, security, street lighting delivered" },
-      { title: "Ready for Allocation", desc: "Physical allocation within 30 days of full payment" },
+      { title: "Verified C of O Title", desc: "Genuine title with government-backed documentation", icon: "ShieldCheck" },
+      { title: "Prime Location", desc: "Ewu-Ode before Interchange, Mowe-Ofada, Ogun", icon: "MapPin" },
+      { title: "40% ROI Projected", desc: "Fast-appreciating corridor with proven historical growth", icon: "TrendingUp" },
+      { title: "Flexible Payment", desc: "Outright, 3, 6 and 12-month structured plans", icon: "Wallet" },
+      { title: "Full Infrastructure", desc: "Roads, drainage, security, street lighting delivered", icon: "Building2" },
+      { title: "Ready for Allocation", desc: "Physical allocation within 30 days of full payment", icon: "Sparkles" },
     ],
     galleryPreview: [
       "https://res.cloudinary.com/vxtwsudt/image/upload/v1783609182/5fc1b1d0-fd97-4ee0-945e-af4caba951d2_an2bmz.jpg",
@@ -366,12 +366,12 @@ export const projectDetailContent: Record<string, ProjectDetailContent> = {
     heading: "Developed for comfort, value and long-term growth.",
     previewHeading: "A polished estate experience from the first impression.",
     highlights: [
-      { title: "Verified C of O Title", desc: "Genuine title with government-backed documentation" },
-      { title: "Prime Location", desc: "Strategically positioned in Lamini-Apete, close to University of Ibadan, Ibadan Poly, Lifeforte International School, Lagos-Ibadan train station" },
-      { title: "25% ROI Projected", desc: "Fast-appreciating corridor with proven historical growth" },
-      { title: "Flexible Payment", desc: "Outright, 3, 6, 12 and 18-month structured plans" },
-      { title: "Full Infrastructure", desc: "Roads, drainage, security, street lighting delivered" },
-      { title: "Ready for Allocation", desc: "Physical allocation within 30 days of full payment" },
+      { title: "Verified C of O Title", desc: "Genuine title with government-backed documentation", icon: "ShieldCheck" },
+      { title: "Prime Location", desc: "Strategically positioned in Lamini-Apete, close to University of Ibadan, Ibadan Poly, Lifeforte International School, Lagos-Ibadan train station", icon: "MapPin" },
+      { title: "25% ROI Projected", desc: "Fast-appreciating corridor with proven historical growth", icon: "TrendingUp" },
+      { title: "Flexible Payment", desc: "Outright, 3, 6, 12 and 18-month structured plans", icon: "Wallet" },
+      { title: "Full Infrastructure", desc: "Roads, drainage, security, street lighting delivered", icon: "Building2" },
+      { title: "Ready for Allocation", desc: "Physical allocation within 30 days of full payment", icon: "Sparkles" },
     ],
     galleryPreview: [
       "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1400&q=80",
@@ -387,10 +387,10 @@ export const projectDetailContent: Record<string, ProjectDetailContent> = {
     heading: "A calm, secure address with lasting value.",
     previewHeading: "Life at Country Home Estate.",
     highlights: [
-      { title: "Serene Location", desc: "Located in Simawa on the fast-growing Lagos-Ibadan corridor" },
-      { title: "Family-Friendly Design", desc: "Thoughtfully planned for privacy, comfort and long-term living" },
-      { title: "Infrastructure Ready", desc: "Fully paved roads, good drainage and a premium landscape setting" },
-      { title: "Strong Appreciation Outlook", desc: "Positioned for sustained demand and capital growth" },
+      { title: "Serene Location", desc: "Located in Simawa on the fast-growing Lagos-Ibadan corridor", icon: "MapPin" },
+      { title: "Family-Friendly Design", desc: "Thoughtfully planned for privacy, comfort and long-term living", icon: "Users" },
+      { title: "Infrastructure Ready", desc: "Fully paved roads, good drainage and a premium landscape setting", icon: "Building2" },
+      { title: "Strong Appreciation Outlook", desc: "Positioned for sustained demand and capital growth", icon: "TrendingUp" },
     ],
     galleryPreview: [
       "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
@@ -403,10 +403,10 @@ export const projectDetailContent: Record<string, ProjectDetailContent> = {
     heading: "A strategic investment in one of Lagos' most promising corridors.",
     previewHeading: "Life at Imperial Gardens.",
     highlights: [
-      { title: "Prime Epe Position", desc: "Close to the Lekki-Free Trade Zone, Dangote Refinery and the proposed airport" },
-      { title: "High Growth Corridor", desc: "Ideal for investors targeting rapid appreciation and long-term value" },
-      { title: "Flexible Ownership", desc: "Structured payment options tailored to investors and end-users" },
-      { title: "Premium Infrastructure", desc: "Gated perimeter, solar street lights and waterfront-ready access" },
+      { title: "Prime Epe Position", desc: "Close to the Lekki-Free Trade Zone, Dangote Refinery and the proposed airport", icon: "MapPin" },
+      { title: "High Growth Corridor", desc: "Ideal for investors targeting rapid appreciation and long-term value", icon: "TrendingUp" },
+      { title: "Flexible Ownership", desc: "Structured payment options tailored to investors and end-users", icon: "Wallet" },
+      { title: "Premium Infrastructure", desc: "Gated perimeter, solar street lights and waterfront-ready access", icon: "Building2" },
     ],
     galleryPreview: [
       "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80",
@@ -418,10 +418,10 @@ export const projectDetailContent: Record<string, ProjectDetailContent> = {
     heading: "Designed for the future of connected living.",
     previewHeading: "Life at Wulfri Smart City.",
     highlights: [
-      { title: "Future-Ready Homes", desc: "Integrated smart features for comfort, security and convenience" },
-      { title: "Connected Infrastructure", desc: "Fibre internet, solar energy and EV-friendly community planning" },
-      { title: "Walkable Lifestyle", desc: "A well-planned town centre with schools, retail and recreation" },
-      { title: "Premium Community", desc: "Built to support modern families and long-term value" },
+      { title: "Future-Ready Homes", desc: "Integrated smart features for comfort, security and convenience", icon: "Smartphone" },
+      { title: "Connected Infrastructure", desc: "Fibre internet, solar energy and EV-friendly community planning", icon: "Zap" },
+      { title: "Walkable Lifestyle", desc: "A well-planned town centre with schools, retail and recreation", icon: "Map" },
+      { title: "Premium Community", desc: "Built to support modern families and long-term value", icon: "Users" },
     ],
     galleryPreview: [
       "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1200&q=80",
@@ -434,10 +434,10 @@ export const projectDetailContent: Record<string, ProjectDetailContent> = {
     heading: "Luxury, comfort and everyday convenience in one address.",
     previewHeading: "Life at Emerald Court.",
     highlights: [
-      { title: "Refined Design", desc: "Contemporary terrace duplexes finished to a premium standard" },
-      { title: "Prime Lekki-Ajah Address", desc: "A highly sought-after location with exceptional connectivity" },
-      { title: "Smart Living", desc: "Integrated technology, fitted interiors and elegant finishing" },
-      { title: "Lifestyle Amenities", desc: "Private pool, terrace, BQ and modern comfort in every unit" },
+      { title: "Refined Design", desc: "Contemporary terrace duplexes finished to a premium standard", icon: "Home" },
+      { title: "Prime Lekki-Ajah Address", desc: "A highly sought-after location with exceptional connectivity", icon: "MapPin" },
+      { title: "Smart Living", desc: "Integrated technology, fitted interiors and elegant finishing", icon: "Cpu" },
+      { title: "Lifestyle Amenities", desc: "Private pool, terrace, BQ and modern comfort in every unit", icon: "Sparkles" },
     ],
     galleryPreview: [
       "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80",
@@ -450,10 +450,10 @@ export const projectDetailContent: Record<string, ProjectDetailContent> = {
     heading: "An exclusive lifestyle defined by elegance and comfort.",
     previewHeading: "Life at Royal Crest Estate.",
     highlights: [
-      { title: "Architectural Excellence", desc: "Grand villas designed for luxury, privacy and prestige" },
-      { title: "Prime FCT Address", desc: "A prestigious location in the heart of Abuja's elite property market" },
-      { title: "Premium Finishes", desc: "Private cinema, gym, wine cellar and staff quarters included" },
-      { title: "High-End Lifestyle", desc: "Landscaped grounds and refined interiors for effortless living" },
+      { title: "Architectural Excellence", desc: "Grand villas designed for luxury, privacy and prestige", icon: "Home" },
+      { title: "Prime FCT Address", desc: "A prestigious location in the heart of Abuja's elite property market", icon: "MapPin" },
+      { title: "Premium Finishes", desc: "Private cinema, gym, wine cellar and staff quarters included", icon: "Star" },
+      { title: "High-End Lifestyle", desc: "Landscaped grounds and refined interiors for effortless living", icon: "Users" },
     ],
     galleryPreview: [
       "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
@@ -466,10 +466,10 @@ export const projectDetailContent: Record<string, ProjectDetailContent> = {
     heading: "A high-traffic commercial destination built for yield.",
     previewHeading: "Life at Wulfri Commercial Park.",
     highlights: [
-      { title: "Prime Logistics Location", desc: "Strategically positioned at Sagamu Interchange for strong visibility" },
-      { title: "Mixed-Use Appeal", desc: "Retail frontage, office suites and warehousing in one development" },
-      { title: "Business-Ready Infrastructure", desc: "Loading bays, ample parking and premium access points" },
-      { title: "Investment Potential", desc: "Built for sustained demand and reliable commercial returns" },
+      { title: "Prime Logistics Location", desc: "Strategically positioned at Sagamu Interchange for strong visibility", icon: "MapPin" },
+      { title: "Mixed-Use Appeal", desc: "Retail frontage, office suites and warehousing in one development", icon: "ShoppingBag" },
+      { title: "Business-Ready Infrastructure", desc: "Loading bays, ample parking and premium access points", icon: "Building2" },
+      { title: "Investment Potential", desc: "Built for sustained demand and reliable commercial returns", icon: "TrendingUp" },
     ],
     galleryPreview: [
       "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=80",
@@ -771,6 +771,6 @@ export const blogPosts = [
 ];
 
 export const WHATSAPP_NUMBER = "2348027057374";
-export const PHONE_NUMBER = "2348027057374";
+export const PHONE_NUMBER = "+234 802 705 7374";
 export const EMAIL = "info@wulfrihomes.com.ng";
 export const OFFICE_ADDRESS = "Plot 106, Ademola Ajasa Street, Omole Phase 1, Ikeja, Lagos, Nigeria";
