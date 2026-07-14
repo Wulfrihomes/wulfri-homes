@@ -8,7 +8,7 @@ declare global {
 }
 
 export const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const location = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -16,10 +16,13 @@ export const ScrollToTop = () => {
     if (window.fbq) {
       window.fbq("track", "PageView");
 
-      // Remove after testing
-      console.log("Meta PageView:", window.location.href);
+      console.log(
+        "Meta PageView",
+        window.location.pathname,
+        window.location.href
+      );
     }
-  }, [pathname]);
+  }, [location]);
 
   return null;
 };

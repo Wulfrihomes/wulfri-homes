@@ -1,124 +1,40 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+  ...
+  <!-- Meta Pixel -->
+  <script>
+    !(function(f,b,e,v,n,t,s){
+      if(f.fbq)return;
+      n=f.fbq=function(){
+        n.callMethod
+          ? n.callMethod.apply(n,arguments)
+          : n.queue.push(arguments);
+      };
+      if(!f._fbq)f._fbq=n;
+      n.push=n;
+      n.loaded=true;
+      n.version="2.0";
+      n.queue=[];
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      t=b.createElement(e);
+      t.async=true;
+      t.src="https://connect.facebook.net/en_US/fbevents.js";
 
-    <title>
-      Wulfri Homes — Premium Real Estate & Land Investments in Nigeria
-    </title>
+      s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s);
+    })(window,document,"script");
 
-    <meta
-      name="description"
-      content="Wulfri Homes helps individuals, families and investors own premium land and beautiful homes across Nigeria with flexible payment plans and verified titles."
-    />
+    fbq("init", "519684237469739");
+  </script>
 
-    <meta name="author" content="Wulfri Homes" />
+</head>
 
-    <link rel="canonical" href="https://wulfrihomes.com.ng/" />
+<body>
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
+  <div id="root"></div>
 
-    <meta
-      property="og:title"
-      content="Wulfri Homes — Premium Real Estate & Land Investments in Nigeria"
-    />
+  <script type="module" src="/src/main.tsx"></script>
 
-    <meta
-      property="og:description"
-      content="Build wealth through smart real estate investments. Verified titles, flexible payment plans, prime locations across Nigeria."
-    />
-
-    <meta property="og:url" content="https://wulfrihomes.com.ng/" />
-
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-
-    <meta name="twitter:site" content="@WulfriHomes" />
-
-    <meta
-      name="twitter:title"
-      content="Wulfri Homes — Premium Real Estate & Land Investments in Nigeria"
-    />
-
-    <meta
-      name="twitter:description"
-      content="Build wealth through smart real estate investments across Nigeria."
-    />
-
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "RealEstateAgent",
-        "name": "Wulfri Homes",
-        "url": "https://wulfrihomes.com.ng",
-        "areaServed": "Nigeria",
-        "description": "Premium real estate development and marketing company in Nigeria."
-      }
-    </script>
-
-
-    <!-- Meta Pixel Code -->
-    <script>
-      !(function (f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-
-        n = f.fbq = function () {
-          n.callMethod
-            ? n.callMethod.apply(n, arguments)
-            : n.queue.push(arguments);
-        };
-
-        if (!f._fbq) f._fbq = n;
-
-        n.push = n;
-        n.loaded = true;
-        n.version = "2.0";
-        n.queue = [];
-
-        t = b.createElement(e);
-        t.async = true;
-        t.src = "https://connect.facebook.net/en_US/fbevents.js";
-
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-
-      })(window, document, "script");
-
-
-      fbq("init", "519684237469739");
-
-      fbq("track", "PageView");
-    </script>
-    <!-- End Meta Pixel Code -->
-
-  </head>
-
-
-  <body>
-
-    <!-- Meta Pixel NoScript -->
-    <noscript>
-      <img
-        height="1"
-        width="1"
-        style="display:none"
-        src="https://www.facebook.com/tr?id=519684237469739&ev=PageView&noscript=1"
-        alt=""
-      />
-    </noscript>
-    <!-- End Meta Pixel NoScript -->
-
-
-    <div id="root"></div>
-
-
-    <script type="module" src="/src/main.tsx"></script>
-
-  </body>
+</body>
 </html>
