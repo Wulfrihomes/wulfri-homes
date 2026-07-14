@@ -58,10 +58,15 @@ export const LeadForm = ({
       return;
     }
 
-    // Meta Pixel Lead Conversion Event
-    if (typeof window !== "undefined" && (window as any).fbq) {
-      (window as any).fbq("track", "Lead");
-    }
+   // Meta Pixel Lead Conversion Event
+if (typeof window !== "undefined" && (window as any).fbq) {
+  (window as any).fbq("track", "Lead", {
+    content_name: form.project_interest,
+    content_category: "Real Estate",
+    content_type: "Land Investment",
+    source: form.source,
+  });
+}
 
     setSubmitted(true);
 
