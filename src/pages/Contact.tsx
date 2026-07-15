@@ -69,8 +69,8 @@ const Contact = () => {
                   <select className="w-full h-12 px-4 bg-linen border border-border focus:outline-none focus:border-primary text-charcoal">
                     <option>Emirates Parks & Gardens</option>
                     <option>Lushville Estate</option>
-                    <option>Country Home Estate</option>
-                    <option>Imperial Gardens</option>
+                    <option>The Legacy</option>
+                    <option>Zylus Chrystland City</option>
                     <option>Wulfri Smart City</option>
                     <option>Emerald Court</option>
                     <option>Royal Crest Estate</option>

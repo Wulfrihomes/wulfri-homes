@@ -4,8 +4,8 @@ import { projectDetailContent } from "../data/wulfri";
 describe("project detail content", () => {
   it("includes why, video, and preview content for the requested estates", () => {
     const slugs = [
-      "country-home-estate",
-      "imperial-gardens",
+      "the-legacy",
+      "zylus-chrystland-city",
       "wulfri-smart-city",
       "emerald-court",
       "royal-crest-estate",

@@ -110,17 +110,17 @@ mapLink:
     featured: true,
   },
   {
-    id: "country-home-estate",
-    slug: "country-home-estate",
-    name: "Country Home Estate",
-    location: "Simawa, Off Lagos-Ibadan Expressway",
-    state: "Ogun",
+    id: "the-legacy",
+    slug: "the-legacy",
+    name: "The Legacy",
+    location: "Along Ibadan-Ijebu Ode Road, Off Lagos-Ibadan ",
+    state: "Oyo",
     type: "Land",
-    priceFrom: "₦6.5M",
+    priceFrom: "₦17M",
     status: "Available",
-    tagline: "Serene living on Lagos-Ibadan corridor",
+    tagline: "Serene living in Ibadan's fast-growing corridor",
     description:
-      "A tranquil residential enclave designed for families seeking peace, security and appreciation. Country Home Estate features fully paved roads, mature landscaping and a fast-appreciating land value.",
+      "A tranquil residential enclave designed for families seeking peace, security and appreciation. The Legacy features fully paved roads, mature landscaping and a fast-appreciating land value.",
     heroImage: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1920&q=80",
     gallery: [
       "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
@@ -128,11 +128,10 @@ mapLink:
       "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80",
     ],
     amenities: ["Gated Community", "CCTV Coverage", "Water Supply", "Recreational Zone", "Landscaping"],
-    plotSizes: ["500 sqm", "1000 sqm"],
+    plotSizes: ["500 sqm"],
     paymentPlans: [
-      { label: "Outright", value: "₦6.5M" },
-      { label: "6 Months", value: "₦7.2M" },
-      { label: "12 Months", value: "₦8.4M" },
+      { label: "6 Months", value: "₦17M" },
+      { label: "12 Months", value: "₦18.7M" },
      ],
     
     mapEmbed:
@@ -144,27 +143,36 @@ mapLink:
     featured: true,
   },
   {
-    id: "imperial-gardens",
-    slug: "imperial-gardens",
-    name: "Imperial Gardens",
+    id: "zylus-chrystland-city",
+    slug: "zylus-chrystland-city",
+    name: "Zylus Chrystland City",
     location: "Epe, Lagos",
     state: "Lagos",
     type: "Land",
     priceFrom: "₦12M",
     status: "Available",
-    tagline: "Prime waterfront investment opportunity",
+    tagline: "By St Augustine University, Epe",
     description:
-      "Imperial Gardens sits within the fast-appreciating Epe corridor, moments from the Lekki-Free Trade Zone, Dangote Refinery and the proposed international airport. A generational investment.",
+      "Zylus Chrystland City sits within the fast-appreciating Epe corridor, moments from the Lekki-Free Trade Zone, Dangote Refinery and the proposed international airport. A generational investment.",
     heroImage: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1920&q=80",
     gallery: [
       "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80",
       "https://images.unsplash.com/photo-1600566753086-00f18fe6ba69?w=1200&q=80",
     ],
-    amenities: ["Waterfront Access", "Excision Title", "Solar Street Lights", "Gated Perimeter"],
-    plotSizes: ["500 sqm", "1000 sqm"],
+    amenities: [
+      "24/7 Security",
+      "Perimeter Fencing",
+      "Interlocked Road Network",
+      "Underground Drainage",
+      "Street Lighting",
+      "Recreational Park",
+      "Green Areas",
+      "Estate Gate House",
+    ],
+    plotSizes: ["300 sqm", "500 sqm"],
     paymentPlans: [
-      { label: "Outright", value: "₦12M" },
-      { label: "12 Months", value: "₦15M" },
+      { label: "6 Months (300sqm)", value: "₦12M" },
+      { label: "6 Months (500sqm)", value: "₦20M" },
     ],
     
     mapEmbed:
@@ -382,10 +390,10 @@ export const projectDetailContent: Record<string, ProjectDetailContent> = {
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=80",
     ],
   },
-  "country-home-estate": {
-    eyebrow: "Why Country Home Estate",
+  "the-legacy": {
+    eyebrow: "Why The Legacy",
     heading: "A calm, secure address with lasting value.",
-    previewHeading: "Life at Country Home Estate.",
+    previewHeading: "Life at The Legacy.",
     highlights: [
       { title: "Serene Location", desc: "Located in Simawa on the fast-growing Lagos-Ibadan corridor" },
       { title: "Family-Friendly Design", desc: "Thoughtfully planned for privacy, comfort and long-term living" },
@@ -398,10 +406,10 @@ export const projectDetailContent: Record<string, ProjectDetailContent> = {
       "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80",
     ],
   },
-  "imperial-gardens": {
-    eyebrow: "Why Imperial Gardens",
+  "zylus-chrystland-city": {
+    eyebrow: "Why Zylus Chrystland City",
     heading: "A strategic investment in one of Lagos' most promising corridors.",
-    previewHeading: "Life at Imperial Gardens.",
+    previewHeading: "Life at Zylus Chrystland City.",
     highlights: [
       { title: "Prime Epe Position", desc: "Close to the Lekki-Free Trade Zone, Dangote Refinery and the proposed airport" },
       { title: "High Growth Corridor", desc: "Ideal for investors targeting rapid appreciation and long-term value" },
@@ -479,12 +487,12 @@ export const projectDetailContent: Record<string, ProjectDetailContent> = {
 };
 
 export const projectLandingConfigs: Record<string, ProjectLandingConfig> = {
-  "country-home-estate": {
-    route: "/country-home-estate",
+  "the-legacy": {
+    route: "/the-legacy",
     heroImage: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1920&q=80",
-    badge: "By Lexshield Properties Limited",
-    title: "Own Land at Country Home Estate",
-    subtitle: "A serene residential estate in Simawa with premium landscaping, secure living and strong investment potential.",
+    badge: "By MKH Properties",
+    title: "Own Land at The Legacy",
+    subtitle: "A serene residential estate in Ibadan with premium landscaping, secure living and strong investment potential.",
     ctaLabel: "Book Free Inspection",
     gallery: [
       "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1400&q=80",
@@ -496,26 +504,25 @@ export const projectLandingConfigs: Record<string, ProjectLandingConfig> = {
     ],
     usps: [
       { title: "Peaceful Setting", desc: "A calm and secure address designed for family living and long-term appreciation." },
-      { title: "Prime Corridor", desc: "Strategic location in Simawa, off the Lagos-Ibadan Expressway." },
+      { title: "Prime Corridor", desc: "Strategic location in Ibadan, off the Lagos-Ibadan Expressway." },
       { title: "Flexible Payment", desc: "Easy ownership plans tailored for both first-time buyers and investors." },
       { title: "Premium Infrastructure", desc: "Paved roads, landscaping, security and essential estate services." },
       { title: "Fast Appreciation", desc: "Strong growth outlook on one of Nigeria's busiest development corridors." },
       { title: "Ready for Ownership", desc: "Ideal for residential development and future family settlement." },
     ],
     plans: [
-      { size: "500 sqm", price: "₦6.5M", tag: "Outright" },
-      { size: "500 sqm", price: "₦7.2M", tag: "6 Months" },
-      { size: "1000 sqm", price: "₦8.4M", tag: "12 Months" },
+      { size: "500 sqm", price: "₦17M", tag: "6 Months" },
+      { size: "500 sqm", price: "₦18.7M", tag: "12 Months" },
     ],
     amenities: ["Gated Community", "CCTV Coverage", "Water Supply", "Recreational Zone", "Landscaping", "Security Patrols"],
-    source: "Country Home Estate Landing — Bottom",
+    source: "The Legacy Landing — Bottom",
   },
-  "imperial-gardens": {
-    route: "/imperial-gardens",
+  "zylus-chrystland-city": {
+    route: "/zylus-chrystland-city",
     heroImage: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1920&q=80",
-    badge: "By Lexshield Properties Limited",
-    title: "Own Land at Imperial Gardens",
-    subtitle: "Prime waterfront-ready land in Epe with premium access to the booming industrial and logistics corridor.",
+    badge: "By Zylus Homes & Property",
+    title: "Own Land at Zylus Chrystland City",
+    subtitle: "Prime land in Epe with premium access to the booming industrial and logistics corridor.",
     ctaLabel: "Book Free Inspection",
     gallery: [
       "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1400&q=80",
@@ -534,11 +541,11 @@ export const projectLandingConfigs: Record<string, ProjectLandingConfig> = {
       { title: "Growth Potential", desc: "Positioned for long-term capital appreciation in a fast-moving corridor." },
     ],
     plans: [
-      { size: "500 sqm", price: "₦12M", tag: "Outright" },
-      { size: "1000 sqm", price: "₦15M", tag: "12 Months" },
+      { size: "300 sqm", price: "₦12M", tag: "Outright" },
+      { size: "500 sqm", price: "₦20M", tag: "Outright" },
     ],
     amenities: ["Waterfront Access", "Excision Title", "Solar Street Lights", "Gated Perimeter", "Estate Security", "Landscaping"],
-    source: "Imperial Gardens Landing — Bottom",
+    source: "Zylus Chrystland City Landing — Bottom",
   },
   "wulfri-smart-city": {
     route: "/wulfri-smart-city",
@@ -669,7 +676,7 @@ export const getProjectsByType = (type: ProjectType) => projects.filter((p) => p
 export const whyChooseUs = [
   { title: "Verified Titles", desc: "Every project comes with C of O, Governor's Consent or verified excision.", icon: "ShieldCheck" },
   { title: "Flexible Payment Plans", desc: "Structured plans from 3 to 24 months tailored to your cashflow.", icon: "Wallet" },
-  { title: "Prime Locations", desc: "Strategic sites in Lagos, Ogun, Abuja and other appreciating corridors.", icon: "MapPin" },
+  { title: "Prime Locations", desc: "Strategic sites in Lagos, Ogun, Oyo and other appreciating corridors.", icon: "MapPin" },
   { title: "Fast Appreciation", desc: "Properties historically appreciating 25–40% year-on-year.", icon: "TrendingUp" },
   { title: "Infrastructure Development", desc: "Roads, drainage, power and security delivered before allocation.", icon: "Building2" },
   { title: "Trusted Partner", desc: "Years of delivering value to Nigerian and diaspora investors.", icon: "Handshake" },
@@ -690,9 +697,9 @@ export const testimonials = [
   },
   {
     name: "Chukwuma Family",
-    role: "Homeowners — Country Home Estate",
+    role: "Homeowners — The Legacy",
     quote:
-      "We inspected several estates before choosing Wulfri. The infrastructure was already in place, the community felt secure, and the flexible plan made ownership stress-free.",
+      "We inspected several estates before choosing The Legacy. The infrastructure was already in place, the community felt secure, and the flexible plan made ownership stress-free.",
   },
 ];
 
@@ -737,7 +744,7 @@ export const blogPosts = [
     title: "Why Mowe-Ofada is Nigeria's Next Growth Corridor",
     excerpt: "The infrastructure catalysts positioning Mowe-Ofada for 3x land appreciation over the next 5 years.",
     category: "Market Insights",
-    date: "Nov 12, 2026",
+    date: "Jan 12, 2026",
     readTime: "6 min read",
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
   },
@@ -746,7 +753,7 @@ export const blogPosts = [
     title: "The Diaspora Investor's Guide to Nigerian Real Estate",
     excerpt: "Everything Nigerians abroad need to know before buying land or a home back home in 2026.",
     category: "Buying Guide",
-    date: "Oct 28, 2026",
+    date: "Jan 28, 2026",
     readTime: "9 min read",
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80",
   },
@@ -755,7 +762,7 @@ export const blogPosts = [
     title: "Understanding Land Titles in Nigeria: C of O, Governor's Consent and Excision",
     excerpt: "A plain-English breakdown of the documents that separate a safe investment from a costly mistake.",
     category: "Land Documentation",
-    date: "Oct 14, 2026",
+    date: "Feb 16, 2026",
     readTime: "7 min read",
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&q=80",
   },
@@ -764,7 +771,7 @@ export const blogPosts = [
     title: "The ROI of Nigerian Land vs. Stocks and Crypto",
     excerpt: "A 10-year comparative analysis of returns from prime Nigerian land, NSE stocks and digital assets.",
     category: "Investment Tips",
-    date: "Sep 30, 2026",
+    date: "Apr 30, 2026",
     readTime: "8 min read",
     image: "https://images.unsplash.com/photo-1611095973763-414019e72400?w=1200&q=80",
   },

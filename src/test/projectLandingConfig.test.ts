@@ -4,8 +4,8 @@ import { projectLandingConfigs } from "../data/wulfri";
 describe("project landing configs", () => {
   it("includes a landing configuration for every requested estate", () => {
     const slugs = [
-      "country-home-estate",
-      "imperial-gardens",
+      "the-legacy",
+      "zylus-chrystland-city",
       "wulfri-smart-city",
       "emerald-court",
       "royal-crest-estate",
