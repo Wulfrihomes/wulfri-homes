@@ -29,28 +29,29 @@ const ProjectDetail = () => {
 
   const related = projects.filter((p) => p.type === project.type && p.id !== project.id).slice(0, 3);
 
-const specialLandingRoute =
-  project.slug === "emirates-parks-gardens"
-    ? "/emirates-parks-gardens"
-    : project.slug === "lushville-estate"
-    ? "/lushville-estate"
-    : project.slug === "the-legacy"
-    ? "/the-legacy"
-    : project.slug === "zylus-chrystland-city"
-    ? "/zylus-chrystland-city"
-    : project.slug === "wulfri-smart-city"
-    ? "/wulfri-smart-city"
-    : project.slug === "emerald-court"
-    ? "/emerald-court"
-    : project.slug === "royal-crest-estate"
-    ? "/royal-crest-estate"
-    : project.slug === "wulfri-commercial-park"
-    ? "/wulfri-commercial-park"
-    : null;
+  const specialLandingRoute =
+    project.slug === "emirates-parks-gardens"
+      ? "/emirates-parks-gardens"
+      : project.slug === "lushville-estate"
+      ? "/lushville-estate"
+      : project.slug === "the-legacy"
+      ? "/the-legacy"
+      : project.slug === "zylus-chrystland-city"
+      ? "/zylus-chrystland-city"
+      : project.slug === "wulfri-smart-city"
+      ? "/wulfri-smart-city"
+      : project.slug === "emerald-court"
+      ? "/emerald-court"
+      : project.slug === "royal-crest-estate"
+      ? "/royal-crest-estate"
+      : project.slug === "wulfri-commercial-park"
+      ? "/wulfri-commercial-park"
+      : null;
 
-const heroImage = project.heroImage || project.gallery[activeImg] || project.gallery[0];
-const detailContent = projectDetailContent[project.slug];
-const previewImages = detailContent?.galleryPreview?.length ? detailContent.galleryPreview : project.gallery;
+  const heroImage = project.heroImage || project.gallery[activeImg] || project.gallery[0];
+  const detailContent = projectDetailContent[project.slug];
+  const previewImages = detailContent?.galleryPreview?.length ? detailContent.galleryPreview : project.gallery;
+
   return (
     <Layout>
       {/* Hero image */}
@@ -113,22 +114,39 @@ const previewImages = detailContent?.galleryPreview?.length ? detailContent.gall
                   </div>
                 </div>
 
+                {/* Estate Video Section with Dynamic Fallback */}
                 <div>
                   <p className="eyebrow mb-4">Estate Video</p>
                   <h2 className="font-serif text-3xl md:text-4xl text-charcoal leading-[1.15] mb-8">Take a virtual tour.</h2>
-                  <div className="relative aspect-video bg-charcoal overflow-hidden group cursor-pointer">
-                    <img
-                      src={previewImages[0]}
-                      alt={`${project.name} video preview`}
-                      className="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <PlayCircle className="w-20 h-20 text-primary drop-shadow-lg group-hover:scale-110 transition-transform" strokeWidth={1.2} />
+                  
+                  {project.youtubeVideoId ? (
+                    // 🎥 Interactive Video Embed
+                    <div className="relative aspect-video bg-charcoal overflow-hidden border border-border shadow-md">
+                      <iframe
+                        src={`https://www.youtube.com/embed/${project.youtubeVideoId}`}
+                        title={`${project.name} Virtual Tour`}
+                        className="absolute inset-0 w-full h-full border-0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                        loading="lazy"
+                      />
                     </div>
-                    <div className="absolute bottom-4 left-4 text-ivory text-xs tracking-[0.2em] uppercase bg-charcoal/60 px-3 py-1">
-                      Coming soon
+                  ) : (
+                    // 🖼️ Coming Soon Screen
+                    <div className="relative aspect-video bg-charcoal overflow-hidden group cursor-pointer">
+                      <img
+                        src={previewImages[0]}
+                        alt={`${project.name} video preview`}
+                        className="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <PlayCircle className="w-20 h-20 text-primary drop-shadow-lg group-hover:scale-110 transition-transform" strokeWidth={1.2} />
+                      </div>
+                      <div className="absolute bottom-4 left-4 text-ivory text-xs tracking-[0.2em] uppercase bg-charcoal/60 px-3 py-1">
+                        Coming soon
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
 
                 <div>
@@ -177,54 +195,51 @@ const previewImages = detailContent?.galleryPreview?.length ? detailContent.gall
               </div>
             </div>
 
-<div>
-  <p className="eyebrow mb-4">Location</p>
+            <div>
+              <p className="eyebrow mb-4">Location</p>
+              <h2 className="font-serif text-3xl md:text-4xl text-charcoal leading-[1.15] mb-6">
+                Locate this development
+              </h2>
 
-  <h2 className="font-serif text-3xl md:text-4xl text-charcoal leading-[1.15] mb-6">
-    Locate this development
-  </h2>
+              {project.mapEmbed ? (
+                <>
+                  <div className="overflow-hidden rounded-xl border border-border shadow-md">
+                    <iframe
+                      src={project.mapEmbed}
+                      width="100%"
+                      height="450"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title={`${project.name} Google Map`}
+                    />
+                  </div>
 
-  {project.mapEmbed ? (
-    <>
-      <div className="overflow-hidden rounded-xl border border-border shadow-md">
-        <iframe
-          src={project.mapEmbed}
-          width="100%"
-          height="450"
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          title={`${project.name} Google Map`}
-        />
-      </div>
-
-      {project.mapLink && (
-        <div className="mt-5 text-center">
-          <a
-            href={project.mapLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-primary text-white hover:bg-primary/90 transition"
-          >
-            <MapPin className="w-5 h-5" />
-            Open in Google Maps
-          </a>
-        </div>
-      )}
-    </>
-  ) : (
-    <div className="rounded-xl border border-border bg-linen p-12 text-center">
-      <MapPin className="w-10 h-10 text-primary mx-auto mb-3" />
-      <p className="text-muted-foreground">
-        Map location will be available soon.
-      </p>
-    </div>
-  )}
-</div>
-
+                  {project.mapLink && (
+                    <div className="mt-5 text-center">
+                      <a
+                        href={project.mapLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-primary text-white hover:bg-primary/90 transition"
+                      >
+                        <MapPin className="w-5 h-5" />
+                        Open in Google Maps
+                      </a>
+                    </div>
+                  )}
+                </>
+              ) : (
+                <div className="rounded-xl border border-border bg-linen p-12 text-center">
+                  <MapPin className="w-10 h-10 text-primary mx-auto mb-3" />
+                  <p className="text-muted-foreground">
+                    Map location will be available soon.
+                  </p>
+                </div>
+              )}
+            </div>
           </div>
-
 
           {/* Sticky sidebar */}
           <aside className="lg:sticky lg:top-28 lg:self-start space-y-6">

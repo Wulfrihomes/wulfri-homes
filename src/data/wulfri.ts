@@ -21,9 +21,10 @@ export interface Project {
   featured?: boolean;
   mapEmbed?: string;
   mapLink?: string;
+  youtubeVideoId?: string;
 }
 
-export const projects: Project[] = [
+const allProjects: Project[] = [
   {
     id: "emirates-parks-gardens",
     slug: "emirates-parks-gardens",
@@ -59,14 +60,10 @@ export const projects: Project[] = [
       { label: "Outright (600sqm)", value: "₦14.5M" },
       { label: "Outright (Commercial)", value: "₦20M" },
     ],
-
-    mapEmbed:
-      "",
-
-    mapLink: 
-      "",
-
+    mapEmbed: "",
+    mapLink: "",
     featured: true,
+    youtubeVideoId: "6UrhYvxpseM",
   },
   {
     id: "lushville-estate",
@@ -82,9 +79,9 @@ export const projects: Project[] = [
       "A master-planned residential estate designed to offer a blend of modern living and serene environments, with state-of-the-art amenities and green spaces. This project focuses on providing premium lifestyle for residents and subscribers.",
     heroImage: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1920&q=80",
     gallery: [
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
+      "https://res.cloudinary.com/vxtwsudt/image/upload/v1784176979/lushville-1-e1751887400545-768x839_nwuv1g.jpg",
+      "https://res.cloudinary.com/vxtwsudt/image/upload/v1784176884/Untitled1_vvt4iv.png",
+      "https://res.cloudinary.com/vxtwsudt/image/upload/v1784176979/lushville-e1751887638946_dqmpwj.jpg",
     ],
     amenities: [
       "24/7 Security",
@@ -99,15 +96,12 @@ export const projects: Project[] = [
       { label: "Instant (300sqm)", value: "₦5.1M" },
       { label: "Instant (500sqm)", value: "₦7.3M" },
       { label: "Instant (Commercial)", value: "₦8.5M" },
-     ],
-    
+    ],
     mapEmbed:
-  "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3955.7119340373706!2d3.82059207500206!3d7.497021992515315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMjknNDkuMyJOIDPCsDQ5JzIzLjQiRQ!5e0!3m2!1sen!2sng!4v1783673742916!5m2!1sen!2sng",
-
-mapLink:
-  "https://goo.gl/maps/cEpwqDCnDJavJ58b7",
-
+      "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3955.7119340373706!2d3.82059207500206!3d7.497021992515315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMjknNDkuMyJOIDPCsDQ5JzIzLjQiRQ!5e0!3m2!1sen!2sng!4v1783673742916!5m2!1sen!2sng",
+    mapLink: "https://goo.gl/maps/cEpwqDCnDJavJ58b7",
     featured: true,
+    youtubeVideoId: "jmngF0VY2Pw",
   },
   {
     id: "the-legacy",
@@ -121,26 +115,22 @@ mapLink:
     tagline: "Serene living in Ibadan's fast-growing corridor",
     description:
       "A tranquil residential enclave designed for families seeking peace, security and appreciation. The Legacy features fully paved roads, mature landscaping and a fast-appreciating land value.",
-    heroImage: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1920&q=80",
+    heroImage: "https://res.cloudinary.com/vxtwsudt/image/upload/v1784189635/The_Legacy-f001791_zmqp7k.png",
     gallery: [
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80",
+      "https://res.cloudinary.com/vxtwsudt/image/upload/v1784189628/The_Legacy-f000861_r9ptea.png",
+      "https://res.cloudinary.com/vxtwsudt/image/upload/v1784189628/The_Legacy-f000871_rmdkeq.png",
+      "https://res.cloudinary.com/vxtwsudt/image/upload/v1784189627/The_Legacy_uxl3td.jpg",
     ],
     amenities: ["Gated Community", "CCTV Coverage", "Water Supply", "Recreational Zone", "Landscaping"],
     plotSizes: ["500 sqm"],
     paymentPlans: [
       { label: "6 Months", value: "₦17M" },
       { label: "12 Months", value: "₦18.7M" },
-     ],
-    
-    mapEmbed:
-      "",
-
-    mapLink: 
-      "",
-
+    ],
+    mapEmbed: "",
+    mapLink: "",
     featured: true,
+    youtubeVideoId: "bghbym1qnOs",
   },
   {
     id: "zylus-chrystland-city",
@@ -174,14 +164,10 @@ mapLink:
       { label: "6 Months (300sqm)", value: "₦12M" },
       { label: "6 Months (500sqm)", value: "₦20M" },
     ],
-    
-    mapEmbed:
-      "",
-
-    mapLink: 
-      "",
-
+    mapEmbed: "",
+    mapLink: "",
     featured: true,
+    youtubeVideoId: "",
   },
   {
     id: "wulfri-smart-city",
@@ -214,15 +200,11 @@ mapLink:
     paymentPlans: [
       { label: "Fully Detached", value: "₦85M" },
       { label: "Luxury Villa", value: "₦180M" },
-     ],
-    
-    mapEmbed:
-      "",
-
-    mapLink: 
-      "",
-
+    ],
+    mapEmbed: "",
+    mapLink: "",
     featured: true,
+    youtubeVideoId: "",
   },
   {
     id: "emerald-court",
@@ -247,15 +229,11 @@ mapLink:
     paymentPlans: [
       { label: "Outright", value: "₦120M" },
       { label: "12 Months", value: "₦135M" },
-     ],
-    
-    mapEmbed:
-      "",
-
-    mapLink: 
-      "",
-
+    ],
+    mapEmbed: "",
+    mapLink: "",
     featured: true,
+    youtubeVideoId: "",
   },
   {
     id: "royal-crest-estate",
@@ -281,14 +259,10 @@ mapLink:
       { label: "Outright", value: "₦250M" },
       { label: "24 Months", value: "₦290M" },
     ],
-    
-   mapEmbed:
-      "",
-
-    mapLink: 
-      "",
-
+    mapEmbed: "",
+    mapLink: "",
     featured: true,
+    youtubeVideoId: "",
   },
   {
     id: "wulfri-commercial-park",
@@ -314,16 +288,15 @@ mapLink:
       { label: "Outright", value: "₦45M" },
       { label: "12 Months", value: "₦52M" },
     ],
-    
-    mapEmbed:
-      "",
-
-    mapLink: 
-      "",
-
+    mapEmbed: "",
+    mapLink: "",
     featured: true,
+    youtubeVideoId: "",
   },
 ];
+
+// This dynamically ensures ONLY Land projects are exposed across your UI, hiding Housing and Commercial entirely
+export const projects = allProjects.filter((p) => p.type === "Land");
 
 export interface ProjectDetailContent {
   eyebrow: string;
@@ -375,19 +348,15 @@ export const projectDetailContent: Record<string, ProjectDetailContent> = {
     previewHeading: "A polished estate experience from the first impression.",
     highlights: [
       { title: "Verified C of O Title", desc: "Genuine title with government-backed documentation" },
-      { title: "Prime Location", desc: "Strategically positioned in Lamini-Apete, close to University of Ibadan, Ibadan Poly, Lifeforte International School, Lagos-Ibadan train station" },
       { title: "25% ROI Projected", desc: "Fast-appreciating corridor with proven historical growth" },
       { title: "Flexible Payment", desc: "Outright, 3, 6, 12 and 18-month structured plans" },
       { title: "Full Infrastructure", desc: "Roads, drainage, security, street lighting delivered" },
       { title: "Ready for Allocation", desc: "Physical allocation within 30 days of full payment" },
     ],
     galleryPreview: [
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1400&q=80",
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1400&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1400&q=80",
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1400&q=80",
-      "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1400&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=80",
+      "https://res.cloudinary.com/vxtwsudt/image/upload/v1784176979/lushville-1-e1751887400545-768x839_nwuv1g.jpg",
+      "https://res.cloudinary.com/vxtwsudt/image/upload/v1784176884/Untitled1_vvt4iv.png",
+      "https://res.cloudinary.com/vxtwsudt/image/upload/v1784176979/lushville-e1751887638946_dqmpwj.jpg",
     ],
   },
   "the-legacy": {
@@ -395,15 +364,17 @@ export const projectDetailContent: Record<string, ProjectDetailContent> = {
     heading: "A calm, secure address with lasting value.",
     previewHeading: "Life at The Legacy.",
     highlights: [
-      { title: "Serene Location", desc: "Located in Simawa on the fast-growing Lagos-Ibadan corridor" },
+      { title: "Serene Location", desc: "Located in a fast-growing corridor in Ibadan" },
       { title: "Family-Friendly Design", desc: "Thoughtfully planned for privacy, comfort and long-term living" },
       { title: "Infrastructure Ready", desc: "Fully paved roads, good drainage and a premium landscape setting" },
       { title: "Strong Appreciation Outlook", desc: "Positioned for sustained demand and capital growth" },
     ],
     galleryPreview: [
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80",
+      "https://res.cloudinary.com/vxtwsudt/image/upload/v1784189628/The_Legacy-f000861_r9ptea.png",
+      "https://res.cloudinary.com/vxtwsudt/image/upload/v1784189628/The_Legacy-f000871_rmdkeq.png",
+      "https://res.cloudinary.com/vxtwsudt/image/upload/v1784189627/The_Legacy_uxl3td.jpg",
+      "https://res.cloudinary.com/vxtwsudt/image/upload/v1784189628/The_Legacy-f004716_qozqko.png",
+      "https://res.cloudinary.com/vxtwsudt/image/upload/v1784189633/The_Legacy-f004284_bj9rfk.png",
     ],
   },
   "zylus-chrystland-city": {
@@ -489,18 +460,18 @@ export const projectDetailContent: Record<string, ProjectDetailContent> = {
 export const projectLandingConfigs: Record<string, ProjectLandingConfig> = {
   "the-legacy": {
     route: "/the-legacy",
-    heroImage: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1920&q=80",
+    heroImage: "https://res.cloudinary.com/vxtwsudt/image/upload/v1784189635/The_Legacy-f001791_zmqp7k.png",
     badge: "By MKH Properties",
     title: "Own Land at The Legacy",
     subtitle: "A serene residential estate in Ibadan with premium landscaping, secure living and strong investment potential.",
     ctaLabel: "Book Free Inspection",
     gallery: [
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1400&q=80",
-      "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1400&q=80",
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1400&q=80",
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1400&q=80",
-      "https://images.unsplash.com/photo-1600566753051-6057d5906cdb?w=1400&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=80",
+      "https://res.cloudinary.com/vxtwsudt/image/upload/v1784189628/The_Legacy-f000861_r9ptea.png",
+      "https://res.cloudinary.com/vxtwsudt/image/upload/v1784189628/The_Legacy-f000871_rmdkeq.png",
+      "https://res.cloudinary.com/vxtwsudt/image/upload/v1784189627/The_Legacy_uxl3td.jpg",
+      "https://res.cloudinary.com/vxtwsudt/image/upload/v1784189628/The_Legacy-f004716_qozqko.png",
+      "https://res.cloudinary.com/vxtwsudt/image/upload/v1784189633/The_Legacy-f004284_bj9rfk.png",
+      "https://res.cloudinary.com/vxtwsudt/image/upload/v1784189635/The_Legacy-f001791_zmqp7k.png"
     ],
     usps: [
       { title: "Peaceful Setting", desc: "A calm and secure address designed for family living and long-term appreciation." },
@@ -519,7 +490,7 @@ export const projectLandingConfigs: Record<string, ProjectLandingConfig> = {
   },
   "zylus-chrystland-city": {
     route: "/zylus-chrystland-city",
-    heroImage: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1920&q=80",
+    heroImage: "",
     badge: "By Zylus Homes & Property",
     title: "Own Land at Zylus Chrystland City",
     subtitle: "Prime land in Epe with premium access to the booming industrial and logistics corridor.",

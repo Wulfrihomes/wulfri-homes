@@ -9,12 +9,9 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const gallery = [
-  "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1400&q=80",
-  "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1400&q=80",
-  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1400&q=80",
-  "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1400&q=80",
-  "https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1400&q=80",
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=80",
+  "https://res.cloudinary.com/vxtwsudt/image/upload/v1784176979/lushville-1-e1751887400545-768x839_nwuv1g.jpg",
+      "https://res.cloudinary.com/vxtwsudt/image/upload/v1784176884/Untitled1_vvt4iv.png",
+      "https://res.cloudinary.com/vxtwsudt/image/upload/v1784176979/lushville-e1751887638946_dqmpwj.jpg",
 ];
 
 const usps = [
