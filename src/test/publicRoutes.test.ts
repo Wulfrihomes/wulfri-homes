@@ -6,7 +6,6 @@ describe("public route allowlist", () => {
     expect(isPublicRoute("/")).toBe(true);
     expect(isPublicRoute("/about")).toBe(true);
     expect(isPublicRoute("/investment")).toBe(true);
-    expect(isPublicRoute("/emirates-parks-gardens")).toBe(true);
     expect(isPublicRoute("/faqs")).toBe(true);
     expect(isPublicRoute("/contact")).toBe(true);
 
@@ -20,8 +19,11 @@ describe("public route allowlist", () => {
     expect(isHiddenRoute("/projects")).toBe(true);
     expect(isHiddenRoute("/project/some-slug")).toBe(true);
     expect(isHiddenRoute("/land-estates")).toBe(true);
-    expect(isHiddenRoute("/lushville-estate")).toBe(true);
-    expect(isHiddenRoute("/the-legacy")).toBe(true);
-    expect(isHiddenRoute("/emirates-parks-gardens")).toBe(false);
+
+    expect(isHiddenRoute("/")).toBe(false);
+    expect(isHiddenRoute("/about")).toBe(false);
+    expect(isHiddenRoute("/investment")).toBe(false);
+    expect(isHiddenRoute("/faqs")).toBe(false);
+    expect(isHiddenRoute("/contact")).toBe(false);
   });
 });

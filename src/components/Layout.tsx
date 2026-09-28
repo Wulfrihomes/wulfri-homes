@@ -11,10 +11,10 @@ interface LayoutProps {
 
 export const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="min-h-screen flex flex-col bg-background overflow-x-clip">
       <Header />
       <motion.main
-        className="flex-1 pb-14 lg:pb-0"
+        className="flex-1 pb-20 lg:pb-0 [padding-bottom:calc(env(safe-area-inset-bottom)+5rem)]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}

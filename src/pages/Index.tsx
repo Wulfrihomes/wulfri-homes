@@ -18,7 +18,7 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section ref={heroRef} className="relative h-[100svh] overflow-hidden">
+      <section ref={heroRef} className="relative min-h-[100svh] h-auto overflow-hidden pb-12 pt-24 sm:pb-16 lg:pb-20">
         <motion.div className="absolute inset-0" style={{ y: heroImageY }}>
           <img
             src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=85"
@@ -26,15 +26,15 @@ const Index = () => {
             className="w-full h-[115%] object-cover"
             style={{ animation: "ken-burns 25s ease-out forwards" }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-charcoal/60 via-charcoal/30 to-charcoal/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-charcoal/90 via-charcoal/70 to-charcoal/90" />
         </motion.div>
 
-        <motion.div className="relative container-full h-full flex flex-col justify-center pt-20" style={{ opacity: heroOpacity }}>
+        <motion.div className="relative container-full h-full flex flex-col justify-center" style={{ opacity: heroOpacity }}>
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="max-w-3xl"
+            className="max-w-3xl py-12 sm:py-16"
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-px bg-primary" />
@@ -42,12 +42,12 @@ const Index = () => {
                 Nigeria's Trusted Real Estate Partner
               </p>
             </div>
-            <h1 className="font-serif text-5xl md:text-7xl lg:text-[5.5rem] text-ivory leading-[0.95] tracking-tight mb-8">
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] text-ivory leading-[0.95] tracking-tight mb-6 sm:mb-8">
               Building Wealth<br />
               Through Smart<br />
               <span className="italic text-primary">Real Estate</span> Investments
             </h1>
-            <p className="text-base md:text-lg text-white mb-10 leading-relaxed max-w-xl">
+            <p className="text-base md:text-lg text-white/90 mb-8 sm:mb-10 leading-relaxed max-w-xl">
               Helping individuals and families own premium lands and beautiful homes across Nigeria with flexible payment plans and verified titles.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -64,7 +64,7 @@ const Index = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.8 }}
-            className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
+            className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
           >
             <span className="text-[10px] tracking-[0.3em] uppercase text-ivory/50">Discover</span>
             <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity }}>

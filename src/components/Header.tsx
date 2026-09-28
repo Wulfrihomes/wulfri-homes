@@ -39,6 +39,15 @@ export const Header = () => {
     setOpenDropdown(null);
   }, [location.pathname]);
 
+  useEffect(() => {
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : originalOverflow;
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <header
       className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-border shadow-sm"
@@ -132,15 +141,15 @@ export const Header = () => {
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden border-t border-border overflow-hidden bg-ivory"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="lg:hidden fixed inset-x-0 top-20 bottom-0 z-50 bg-white shadow-2xl overflow-y-auto"
             >
-              <div className="py-6 space-y-1">
+              <div className="min-h-full px-4 py-6 pb-28 space-y-1">
                 {navLinks.map((link) =>
                   link.children ? (
-                    <div key={link.label} className="border-b border-border/50">
+                    <div key={link.label} className="border-b border-border/50 pb-2">
                       <p className="px-4 py-3 text-[10px] font-semibold tracking-[0.3em] uppercase text-primary">
                         {link.label}
                       </p>
@@ -148,7 +157,7 @@ export const Header = () => {
                         <Link
                           key={child.to}
                           to={child.to}
-                          className="block px-6 py-3 text-sm text-charcoal/80 hover:bg-linen"
+                          className="block px-6 py-3.5 text-sm text-charcoal/80 hover:bg-linen rounded-md transition-colors min-h-[44px]"
                         >
                           {child.label}
                         </Link>
@@ -158,13 +167,13 @@ export const Header = () => {
                     <Link
                       key={link.to}
                       to={link.to!}
-                      className="block px-4 py-3 text-sm font-medium text-charcoal hover:bg-linen"
+                      className="block px-4 py-3.5 text-sm font-medium text-charcoal hover:bg-linen rounded-md transition-colors min-h-[44px]"
                     >
                       {link.label}
                     </Link>
                   )
                 )}
-                <div className="pt-4 px-4">
+                <div className="sticky bottom-0 left-0 right-0 pt-4 bg-white">
                   <Link to="/contact" className="btn-gold w-full">
                     Book Inspection
                   </Link>

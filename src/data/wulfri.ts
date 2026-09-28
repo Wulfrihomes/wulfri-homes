@@ -1,6 +1,18 @@
 export type ProjectType = "Land" | "Housing" | "Commercial";
 export type ProjectStatus = "Available" | "Sold Out" | "Upcoming" | "Selling Fast";
 
+// 1. Defined structured Pricing Tiers for flexible details per page
+export interface PricingPlan {
+  label: string;
+  value: string;
+}
+
+export interface PricingTier {
+  title: string;
+  popular?: boolean;
+  plans: PricingPlan[];
+}
+
 export interface Project {
   id: string;
   slug: string;
@@ -22,6 +34,8 @@ export interface Project {
   mapEmbed?: string;
   mapLink?: string;
   youtubeVideoId?: string;
+  developer?: string; // <--- Dynamic Developer Branding
+  pricingTiers?: PricingTier[]; // <--- Dynamic Pricing Details
 }
 
 const allProjects: Project[] = [
@@ -64,6 +78,218 @@ const allProjects: Project[] = [
     mapLink: "",
     featured: true,
     youtubeVideoId: "6UrhYvxpseM",
+    developer: "By Lexshield Properties Limited",
+    pricingTiers: [
+      {
+        title: "Residential 300sqm",
+        popular: false,
+        plans: [
+          { label: "Instant Payment", value: "₦8.25M" },
+          { label: "0–3 Months Installment", value: "₦8.85M" },
+          { label: "6 Months Plan", value: "₦9.5M" },
+        ],
+      },
+      {
+        title: "Residential 600sqm",
+        popular: true,
+        plans: [
+          { label: "Instant Payment", value: "₦14.5M" },
+          { label: "0–3 Months Installment", value: "₦15.5M" },
+          { label: "6 Months Plan", value: "₦16.5M" },
+        ],
+      },
+      {
+        title: "Commercial Plot",
+        popular: false,
+        plans: [
+          { label: "Instant Payment", value: "₦20M" },
+          { label: "0–6 Months Installment", value: "₦22M" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "country-home-estate",
+    slug: "country-home-estate",
+    name: "Country Home Estate",
+    location: "Iddo-Ibadan, Along Ido-Eruwa Road",
+    state: "Oyo",
+    type: "Land",
+    priceFrom: "₦1.7M",
+    status: "Selling Fast",
+    tagline: "Serene and accessible estate development in Iddo, Ibadan",
+    description:
+      "Country Home Estate offers a blend of natural serenity and fast-developing infrastructure in Iddo-Ibadan. Strategically situated along the Ido-Eruwa road, this estate features verified title, essential modern amenities, and highly affordable payment plans.",
+    heroImage: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
+    ],
+    amenities: [
+      "Perimeter Fencing",
+      "24/7 Security",
+      "24 Hours Electricity",
+      "Good Road Network",
+      "Recreational Center",
+      "Drainage System",
+      "Modern Tech Hub",
+      "Shopping Mall",
+      "World Class Educational Center",
+    ],
+    plotSizes: ["300 sqm", "500 sqm"],
+    paymentPlans: [
+      { label: "0-3 Months (300sqm)", value: "₦1.7M" },
+      { label: "0-3 Months (500sqm)", value: "₦2.7M" },
+    ],
+    mapEmbed: "",
+    mapLink: "",
+    featured: true,
+    youtubeVideoId: "",
+    developer: "By Lexshield Properties Limited",
+    pricingTiers: [
+      {
+        title: "Residential 300sqm",
+        popular: false,
+        plans: [
+          { label: "0-3 Months", value: "₦1.7M" },
+          { label: "6 Months Plan", value: "₦2M" },
+          { label: "12 Months Plan", value: "₦2.5M" },
+          { label: "18 Months Plan", value: "₦3M" },
+        ],
+      },
+      {
+        title: "Residential 500sqm",
+        popular: true,
+        plans: [
+          { label: "0-3 Months", value: "₦2.7M" },
+          { label: "6 Months Plan", value: "₦3M" },
+          { label: "12 Months Plan", value: "₦3.5M" },
+          { label: "18 Months Plan", value: "₦4M" },
+        ],
+      },
+      {
+        title: "Statutory Fee Breakdown",
+        popular: false,
+        plans: [
+          { label: "0-3 Months", value: "₦1.8M" },
+          { label: "6 Months", value: "₦2M" },
+          { label: "12 Months", value: "₦2.2M" },
+          { label: "18 Months", value: "₦2.5M" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "zylus-olumo-pride",
+    slug: "zylus-olumo-pride",
+    name: "Zylus Olumo Pride",
+    location: "Abeokuta",
+    state: "Ogun",
+    type: "Land",
+    priceFrom: "₦5.5M",
+    status: "Selling Fast",
+    tagline: "Prime real estate backed by Government Allocation in Abeokuta",
+    description:
+      "Zylus Olumo Pride offers secure, high-value land allocation in Abeokuta, Ogun State. Featuring guaranteed Government Allocation titles and flexible monthly installment options, it provides peace of mind for both residential builders and savvy investors.",
+    heroImage: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1920&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1200&q=80",
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80",
+    ],
+    amenities: [
+      "Government Allocation Title",
+      "Gated Community",
+      "Perimeter Fencing",
+      "Paved Road Network",
+      "Electricity Grid Connection",
+      "24/7 Security",
+    ],
+    plotSizes: ["550 sqm"],
+    paymentPlans: [
+      { label: "Outright Payment", value: "₦5.5M" },
+      { label: "0-3 Months", value: "₦6M" },
+      { label: "3-6 Months", value: "₦6.5M" },
+      { label: "7-12 Months", value: "₦7.5M" },
+    ],
+    mapEmbed: "",
+    mapLink: "",
+    featured: true,
+    youtubeVideoId: "",
+    developer: "By Zylus Group International",
+    pricingTiers: [
+      {
+        title: "Standard Plot 550sqm",
+        popular: true,
+        plans: [
+          { label: "Outright Payment", value: "₦5.5M" },
+          { label: "0-3 Months Plan", value: "₦6M" },
+          { label: "3-6 Months Plan", value: "₦6.5M" },
+          { label: "7-12 Months Plan", value: "₦7.5M" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "micasa-lagos",
+    slug: "micasa-lagos",
+    name: "Micasa Lagos",
+    location: "Elerangbe, Ibeju Lekki",
+    state: "Lagos",
+    type: "Land",
+    priceFrom: "₦19.4M",
+    status: "Selling Fast",
+    tagline: "Exclusive discounted plots with C of O Title in Ibeju Lekki",
+    description:
+      "Micasa Lagos is situated in the high-growth industrial hub of Elerangbe, Ibeju Lekki. Secured with an authentic Certificate of Occupancy (C of O / Government Allocation), this gated development offers heavily discounted promo prices across premium residential and commercial plot sizes.",
+    heroImage: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1920&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80",
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
+    ],
+    amenities: [
+      "Government Allocation (C of O)",
+      "Grand Gate House",
+      "24/7 Security Patrol",
+      "Drainage Channels",
+      "Street Lighting",
+      "Paved Internal Roads",
+    ],
+    plotSizes: ["300 sqm", "500 sqm", "1000 sqm"],
+    paymentPlans: [
+      { label: "300sqm Promo Price", value: "₦19.4M" },
+      { label: "500sqm Promo Price", value: "₦32M" },
+      { label: "1000sqm Commercial", value: "₦80M" },
+    ],
+    mapEmbed: "",
+    mapLink: "",
+    featured: true,
+    youtubeVideoId: "",
+    developer: "By Wulfri Homes & Properties",
+    pricingTiers: [
+      {
+        title: "300sqm Residential Plot",
+        popular: false,
+        plans: [
+          { label: "Pre-Launch Price", value: "₦21.2M" },
+          { label: "Promo Price", value: "₦19.4M" },
+        ],
+      },
+      {
+        title: "500sqm Residential Plot",
+        popular: true,
+        plans: [
+          { label: "Pre-Launch Price", value: "₦35M" },
+          { label: "Promo Price", value: "₦32M" },
+        ],
+      },
+      {
+        title: "1000sqm Commercial Plot",
+        popular: false,
+        plans: [
+          { label: "All Inclusive Price", value: "₦80M" },
+        ],
+      },
+    ],
   },
   {
     id: "lushville-estate",
@@ -102,6 +328,24 @@ const allProjects: Project[] = [
     mapLink: "https://goo.gl/maps/cEpwqDCnDJavJ58b7",
     featured: true,
     youtubeVideoId: "jmngF0VY2Pw",
+    developer: "By Lexshield Properties Limited",
+    pricingTiers: [
+      {
+        title: "Standard 300sqm",
+        plans: [
+          { label: "Outright Payment", value: "₦5.1M" },
+          { label: "3 Months Installment", value: "₦5.6M" },
+        ],
+      },
+      {
+        title: "Premium 500sqm",
+        popular: true,
+        plans: [
+          { label: "Outright Payment", value: "₦7.3M" },
+          { label: "3 Months Installment", value: "₦7.9M" },
+        ],
+      },
+    ],
   },
   {
     id: "the-legacy",
@@ -131,6 +375,16 @@ const allProjects: Project[] = [
     mapLink: "",
     featured: true,
     youtubeVideoId: "bghbym1qnOs",
+    developer: "By Wulfri Homes & Properties",
+    pricingTiers: [
+      {
+        title: "Residential 500sqm",
+        plans: [
+          { label: "6 Months Structural Plan", value: "₦17M" },
+          { label: "12 Months Structural Plan", value: "₦18.7M" },
+        ],
+      },
+    ],
   },
   {
     id: "zylus-chrystland-city",
@@ -168,6 +422,17 @@ const allProjects: Project[] = [
     mapLink: "",
     featured: true,
     youtubeVideoId: "",
+    developer: "In Partnership with Zylus Group",
+    pricingTiers: [
+      {
+        title: "Standard Plot (300sqm)",
+        plans: [{ label: "6 Months Payment Plan", value: "₦12M" }],
+      },
+      {
+        title: "Executive Plot (500sqm)",
+        plans: [{ label: "6 Months Payment Plan", value: "₦20M" }],
+      },
+    ],
   },
   {
     id: "wulfri-smart-city",
@@ -205,6 +470,17 @@ const allProjects: Project[] = [
     mapLink: "",
     featured: true,
     youtubeVideoId: "",
+    developer: "By Wulfri Homes Developments",
+    pricingTiers: [
+      {
+        title: "4 Bedroom Fully Detached",
+        plans: [{ label: "Outright Construction Launch Price", value: "₦85M" }],
+      },
+      {
+        title: "5 Bedroom Luxury Villa",
+        plans: [{ label: "Outright Construction Launch Price", value: "₦180M" }],
+      },
+    ],
   },
   {
     id: "emerald-court",
@@ -234,6 +510,16 @@ const allProjects: Project[] = [
     mapLink: "",
     featured: true,
     youtubeVideoId: "",
+    developer: "By Wulfri Luxury Residences",
+    pricingTiers: [
+      {
+        title: "4 Bedroom Terrace Duplex",
+        plans: [
+          { label: "Outright Purchase", value: "₦120M" },
+          { label: "12 Months Installment Plan", value: "₦135M" },
+        ],
+      },
+    ],
   },
   {
     id: "royal-crest-estate",
@@ -263,6 +549,16 @@ const allProjects: Project[] = [
     mapLink: "",
     featured: true,
     youtubeVideoId: "",
+    developer: "By Wulfri Signature Series",
+    pricingTiers: [
+      {
+        title: "Presidential Mansionette",
+        plans: [
+          { label: "Outright Purchase Portfolio", value: "₦250M" },
+          { label: "24 Months Milestones Delivery", value: "₦290M" },
+        ],
+      },
+    ],
   },
   {
     id: "wulfri-commercial-park",
@@ -292,10 +588,20 @@ const allProjects: Project[] = [
     mapLink: "",
     featured: true,
     youtubeVideoId: "",
+    developer: "By Wulfri Commercial Core Ltd",
+    pricingTiers: [
+      {
+        title: "Industrial Mixed-Use Acre",
+        plans: [
+          { label: "Outright Allocation", value: "₦45M" },
+          { label: "12 Months Financing Structure", value: "₦52M" },
+        ],
+      },
+    ],
   },
 ];
 
-// This dynamically ensures ONLY Land projects are exposed across your UI, hiding Housing and Commercial entirely
+// FILTERED: Export only Land projects to hide Housing and Commercial projects under review
 export const projects = allProjects.filter((p) => p.type === "Land");
 
 export interface ProjectDetailContent {
@@ -304,20 +610,6 @@ export interface ProjectDetailContent {
   previewHeading: string;
   highlights: { title: string; desc: string }[];
   galleryPreview: string[];
-}
-
-export interface ProjectLandingConfig {
-  route: string;
-  heroImage: string;
-  badge: string;
-  title: string;
-  subtitle: string;
-  ctaLabel: string;
-  gallery: string[];
-  usps: { title: string; desc: string }[];
-  plans: { size: string; price: string; tag: string }[];
-  amenities: string[];
-  source: string;
 }
 
 export const projectDetailContent: Record<string, ProjectDetailContent> = {
@@ -340,6 +632,51 @@ export const projectDetailContent: Record<string, ProjectDetailContent> = {
       "https://res.cloudinary.com/vxtwsudt/image/upload/v1783609184/0N2A2342-scaled_rqcmck.jpg",
       "https://res.cloudinary.com/vxtwsudt/image/upload/v1783609184/419A2313-1-scaled_myp8hi.jpg",
       "https://res.cloudinary.com/vxtwsudt/image/upload/v1783609182/1000008728_gilcja.jpg",
+    ],
+  },
+  "country-home-estate": {
+    eyebrow: "Why Country Home Estate",
+    heading: "Affordable luxury and serene living along Ido-Eruwa Road.",
+    previewHeading: "Life at Country Home Estate.",
+    highlights: [
+      { title: "Low Entry Deposit", desc: "Start your investment journey with an initial deposit of ₦300K" },
+      { title: "Comprehensive Infrastructure", desc: "Equipped with modern tech hub, educational center, and shopping mall" },
+      { title: "Flexible Payment Terms", desc: "Convenient payment plans structured up to 18 months" },
+      { title: "Strategic Corridor", desc: "Located along Ido-Eruwa Road, Iddo-Ibadan with high growth potential" },
+    ],
+    galleryPreview: [
+      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
+    ],
+  },
+  "zylus-olumo-pride": {
+    eyebrow: "Why Zylus Olumo Pride",
+    heading: "Guaranteed Government Allocation in the heart of Abeokuta.",
+    previewHeading: "Life at Zylus Olumo Pride.",
+    highlights: [
+      { title: "Government Allocation", desc: "Guaranteed land documentation backed by government allocation" },
+      { title: "Prime Abeokuta Location", desc: "Situated in a prime and accessible zone in Ogun State" },
+      { title: "Structured Monthly Plans", desc: "Clear monthly installment plans up to 12 months with low initial deposit" },
+      { title: "High Capital Appreciation", desc: "Positioned in one of Abeokuta's fastest-growing residential hubs" },
+    ],
+    galleryPreview: [
+      "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1200&q=80",
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80",
+    ],
+  },
+  "micasa-lagos": {
+    eyebrow: "Why Micasa Lagos",
+    heading: "Discounted pre-launch pricing with Certificate of Occupancy (C of O).",
+    previewHeading: "Life at Micasa Lagos.",
+    highlights: [
+      { title: "Certificate of Occupancy (C of O)", desc: "100% verified Government Allocation land title" },
+      { title: "Massive Discount Splash", desc: "Exclusive promotional pricing across residential and commercial plots" },
+      { title: "Prime Ibeju-Lekki Hub", desc: "Located in Elerangbe, Ibeju Lekki, close to major economic catalysts" },
+      { title: "Commercial Opportunities", desc: "1000sqm commercial allocations available all-inclusive" },
+    ],
+    galleryPreview: [
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80",
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
     ],
   },
   "lushville-estate": {
@@ -454,189 +791,6 @@ export const projectDetailContent: Record<string, ProjectDetailContent> = {
       "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=80",
       "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80",
     ],
-  },
-};
-
-export const projectLandingConfigs: Record<string, ProjectLandingConfig> = {
-  "the-legacy": {
-    route: "/the-legacy",
-    heroImage: "https://res.cloudinary.com/vxtwsudt/image/upload/v1784189635/The_Legacy-f001791_zmqp7k.png",
-    badge: "By MKH Properties",
-    title: "Own Land at The Legacy",
-    subtitle: "A serene residential estate in Ibadan with premium landscaping, secure living and strong investment potential.",
-    ctaLabel: "Book Free Inspection",
-    gallery: [
-      "https://res.cloudinary.com/vxtwsudt/image/upload/v1784189628/The_Legacy-f000861_r9ptea.png",
-      "https://res.cloudinary.com/vxtwsudt/image/upload/v1784189628/The_Legacy-f000871_rmdkeq.png",
-      "https://res.cloudinary.com/vxtwsudt/image/upload/v1784189627/The_Legacy_uxl3td.jpg",
-      "https://res.cloudinary.com/vxtwsudt/image/upload/v1784189628/The_Legacy-f004716_qozqko.png",
-      "https://res.cloudinary.com/vxtwsudt/image/upload/v1784189633/The_Legacy-f004284_bj9rfk.png",
-      "https://res.cloudinary.com/vxtwsudt/image/upload/v1784189635/The_Legacy-f001791_zmqp7k.png"
-    ],
-    usps: [
-      { title: "Peaceful Setting", desc: "A calm and secure address designed for family living and long-term appreciation." },
-      { title: "Prime Corridor", desc: "Strategic location in Ibadan, off the Lagos-Ibadan Expressway." },
-      { title: "Flexible Payment", desc: "Easy ownership plans tailored for both first-time buyers and investors." },
-      { title: "Premium Infrastructure", desc: "Paved roads, landscaping, security and essential estate services." },
-      { title: "Fast Appreciation", desc: "Strong growth outlook on one of Nigeria's busiest development corridors." },
-      { title: "Ready for Ownership", desc: "Ideal for residential development and future family settlement." },
-    ],
-    plans: [
-      { size: "500 sqm", price: "₦17M", tag: "6 Months" },
-      { size: "500 sqm", price: "₦18.7M", tag: "12 Months" },
-    ],
-    amenities: ["Gated Community", "CCTV Coverage", "Water Supply", "Recreational Zone", "Landscaping", "Security Patrols"],
-    source: "The Legacy Landing — Bottom",
-  },
-  "zylus-chrystland-city": {
-    route: "/zylus-chrystland-city",
-    heroImage: "",
-    badge: "By Zylus Homes & Property",
-    title: "Own Land at Zylus Chrystland City",
-    subtitle: "Prime land in Epe with premium access to the booming industrial and logistics corridor.",
-    ctaLabel: "Book Free Inspection",
-    gallery: [
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1400&q=80",
-      "https://images.unsplash.com/photo-1600566753086-00f18fe6ba69?w=1400&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=80",
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1400&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1400&q=80",
-      "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1400&q=80",
-    ],
-    usps: [
-      { title: "Strategic Epe Position", desc: "A fast-growing location near the Lekki-Free Trade Zone and major industrial corridors." },
-      { title: "Waterfront Advantage", desc: "Opportunities for premium lifestyle and future commercial value." },
-      { title: "Verified Ownership", desc: "Excision title support and secure legal backing for serious investors." },
-      { title: "Flexible Plans", desc: "Tailored installment options to make entry easier for buyers and investors." },
-      { title: "Premium Access", desc: "Solar street lighting, gated entry and a clearly defined estate environment." },
-      { title: "Growth Potential", desc: "Positioned for long-term capital appreciation in a fast-moving corridor." },
-    ],
-    plans: [
-      { size: "300 sqm", price: "₦12M", tag: "Outright" },
-      { size: "500 sqm", price: "₦20M", tag: "Outright" },
-    ],
-    amenities: ["Waterfront Access", "Excision Title", "Solar Street Lights", "Gated Perimeter", "Estate Security", "Landscaping"],
-    source: "Zylus Chrystland City Landing — Bottom",
-  },
-  "wulfri-smart-city": {
-    route: "/wulfri-smart-city",
-    heroImage: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1920&q=80",
-    badge: "By Lexshield Properties Limited",
-    title: "Own at Wulfri Smart City",
-    subtitle: "A future-ready smart community in Abeokuta built for connected living, energy efficiency and modern family life.",
-    ctaLabel: "Book Free Inspection",
-    gallery: [
-      "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1400&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1400&q=80",
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1400&q=80",
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1400&q=80",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1400&q=80",
-    ],
-    usps: [
-      { title: "Smart Infrastructure", desc: "Fibre internet, solar power and built-in technology for modern living." },
-      { title: "Walkable Community", desc: "A master-planned town centre with retail, wellness and education close by." },
-      { title: "Future-Ready Design", desc: "Built to support EV access, digital connectivity and modern conveniences." },
-      { title: "Lifestyle Focus", desc: "Thoughtful amenities that support comfort, health and community living." },
-      { title: "Security First", desc: "Smart access control and integrated safety systems for peace of mind." },
-      { title: "Long-Term Value", desc: "A high-potential address for families and early adopters alike." },
-    ],
-    plans: [
-      { size: "Fully Detached", price: "₦85M", tag: "Launch" },
-      { size: "Luxury Villa", price: "₦180M", tag: "Premium" },
-    ],
-    amenities: ["Fibre Internet", "Solar Micro-Grid", "EV Charging", "Smart Access Control", "Wellness Centre", "Retail Boulevard"],
-    source: "Wulfri Smart City Landing — Bottom",
-  },
-  "emerald-court": {
-    route: "/emerald-court",
-    heroImage: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1920&q=80",
-    badge: "By Lexshield Properties Limited",
-    title: "Own at Emerald Court",
-    subtitle: "Contemporary terrace duplexes in Ajah with premium finishes, smart amenities and a refined lifestyle experience.",
-    ctaLabel: "Book Free Inspection",
-    gallery: [
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1400&q=80",
-      "https://images.unsplash.com/photo-1600566753051-6057d5906cdb?w=1400&q=80",
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1400&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1400&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=80",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1400&q=80",
-    ],
-    usps: [
-      { title: "Modern Duplex Living", desc: "Carefully designed homes that combine elegance, comfort and function." },
-      { title: "Prime Ajah Address", desc: "A highly desirable location with seamless access to key urban destinations." },
-      { title: "Premium Finishes", desc: "Fitted kitchens, rooftop terraces, smart home features and quality craftsmanship." },
-      { title: "Lifestyle Comfort", desc: "Private pool, BQ and relaxing spaces designed for everyday luxury." },
-      { title: "Reliable Power", desc: "24/7 power support and dependable utility planning for modern living." },
-      { title: "Easy Ownership", desc: "Flexible payment options to support your move into premium property." },
-    ],
-    plans: [
-      { size: "Terrace Duplex", price: "₦120M", tag: "Outright" },
-      { size: "Terrace Duplex", price: "₦135M", tag: "12 Months" },
-    ],
-    amenities: ["Private Pool", "Fitted Kitchen", "Rooftop Terrace", "BQ", "Smart Home", "24/7 Power"],
-    source: "Emerald Court Landing — Bottom",
-  },
-  "royal-crest-estate": {
-    route: "/royal-crest-estate",
-    heroImage: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80",
-    badge: "By Lexshield Properties Limited",
-    title: "Own at Royal Crest Estate",
-    subtitle: "Luxury villas in Abuja designed for prestige, comfort and high-end living in a secure enclave.",
-    ctaLabel: "Book Free Inspection",
-    gallery: [
-      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1400&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1400&q=80",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1400&q=80",
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1400&q=80",
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1400&q=80",
-    ],
-    usps: [
-      { title: "Prestige Address", desc: "An exclusive estate in Abuja crafted for luxury buyers and high-net-worth investors." },
-      { title: "Architectural Excellence", desc: "Spacious villas with refined detailing and elegant interiors." },
-      { title: "Private Amenities", desc: "Private cinema, gym, wine cellar and staff quarters included." },
-      { title: "Secure Lifestyle", desc: "Controlled access and carefully managed grounds for privacy and comfort." },
-      { title: "Landscaped Grounds", desc: "A beautiful setting that elevates everyday living." },
-      { title: "Flexible Purchase", desc: "Structured plans designed to make premium ownership more accessible." },
-    ],
-    plans: [
-      { size: "Luxury Villa", price: "₦250M", tag: "Outright" },
-      { size: "Luxury Villa", price: "₦290M", tag: "24 Months" },
-    ],
-    amenities: ["Private Cinema", "Home Gym", "Wine Cellar", "Elevator", "Staff Quarters", "Landscaped Gardens"],
-    source: "Royal Crest Estate Landing — Bottom",
-  },
-  "wulfri-commercial-park": {
-    route: "/wulfri-commercial-park",
-    heroImage: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=80",
-    badge: "By Lexshield Properties Limited",
-    title: "Own at Wulfri Commercial Park",
-    subtitle: "A premium mixed-use commercial destination at Sagamu Interchange with strong visibility and excellent yield potential.",
-    ctaLabel: "Book Free Inspection",
-    gallery: [
-      "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1400&q=80",
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=80",
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1400&q=80",
-      "https://images.unsplash.com/photo-1460317442991-0ec209397118?w=1400&q=80",
-      "https://images.unsplash.com/photo-1494526585095-c41746248156?w=1400&q=80",
-      "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1400&q=80",
-    ],
-    usps: [
-      { title: "Prime Commercial Location", desc: "Strong visibility and accessibility at Sagamu Interchange." },
-      { title: "Mixed-Use Demand", desc: "Retail frontage, office suites and warehousing in one master-planned park." },
-      { title: "Business Ready", desc: "Designed for efficient operations with loading bays, parking and strong access." },
-      { title: "Return Potential", desc: "Ideal for investors targeting steady income and long-term value." },
-      { title: "Flexible Ownership", desc: "Structured payment options for business owners and investors alike." },
-      { title: "Professional Environment", desc: "A built-for-business setting that supports growth and visibility." },
-    ],
-    plans: [
-      { size: "Commercial Plot", price: "₦45M", tag: "Outright" },
-      { size: "Commercial Plot", price: "₦52M", tag: "12 Months" },
-    ],
-    amenities: ["Retail Frontage", "Office Suites", "Warehousing", "Loading Bays", "Ample Parking", "24/7 Security"],
-    source: "Wulfri Commercial Park Landing — Bottom",
   },
 };
 
